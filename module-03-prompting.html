@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 3 · Prompting for Data Analysis — StatWiseAI Tutorial (Prototype)</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="brand-strip">
+  <span>Center for Healthcare Innovation and Technology Advancements | School of Nursing</span>
+  <span>PROTOTYPE — not affiliated with live UT Sites deployment</span>
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">
+      <span class="mark">SW</span>
+      <span class="site-title-text">
+        <strong>StatWiseAI Tutorial</strong>
+        <span>AI Literacy Learning Path</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="pill-badge">Module 3 of 9</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="path-nav" aria-label="Tutorial module path">
+    <h2>Learning path</h2>
+    <ol>
+      <li class="done"><span class="step-dot">✓</span><a href="module-01-responsible-use.html">1. Start Here: Responsible Use</a><span class="tag tag-built">Prototyped</span></li>
+      <li class="locked"><span class="step-dot">2</span><a href="#" aria-disabled="true">2. AI Basics for Researchers</a><span class="tag tag-planned">Planned</span></li>
+      <li class="active"><span class="step-dot">3</span><a href="module-03-prompting.html">3. Prompting for Data Analysis</a><span class="tag tag-built">Prototyped</span></li>
+      <li class="locked"><span class="step-dot">4</span><a href="#" aria-disabled="true">4. Working with Dataset Documentation</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">5</span><a href="#" aria-disabled="true">5. Reviewing AI Outputs</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">6</span><a href="#" aria-disabled="true">6. Requesting Code</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">7</span><a href="#" aria-disabled="true">7. Reproducibility &amp; Prompt History</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">8</span><a href="#" aria-disabled="true">8. Practice: HRS &amp; NHANES</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">9</span><a href="#" aria-disabled="true">9. Templates &amp; Checklists</a><span class="tag tag-planned">Planned</span></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="main">
+    <div class="page-head">
+      <span class="eyebrow">Module 3 of 9</span>
+      <h1>Prompting for Data Analysis</h1>
+      <p class="lede">A prompt is part of your analytic reasoning, not just a technical instruction. Weak prompts get generic answers; structured prompts get answers you can actually review.</p>
+      <p>A prompt is the instruction or question you give StatWiseAI, and in research it functions as analytic reasoning, not just a technical step. A strong prompt helps StatWiseAI understand your research question, dataset documentation, variables, study design, assumptions, and the type of output you need — a weak prompt produces a generic answer, while a strong prompt produces a response that's more specific, easier to review, and easier to document.</p>
+    </div>
+
+    <div class="card">
+      <h2>Weak vs. strong, side by side</h2>
+      <div class="compare">
+        <div class="col weak">
+          <h4>Weak prompt</h4>
+          <blockquote>"What analysis should I run?"</blockquote>
+          <p class="small" style="margin:.6em 0 0;">No research question, outcome, design, or data source. StatWiseAI has nothing to reason from.</p>
+        </div>
+        <div class="col strong">
+          <h4>Stronger prompt</h4>
+          <blockquote>"I am using public documentation from a longitudinal study to plan an analysis. I want to examine whether baseline depressive symptoms are associated with later functional limitations among older adults. I am not uploading participant-level data. Please help me identify relevant variables, longitudinal modeling strategies, missing data concerns, and assumptions to check."</blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Why the stronger example works</h2>
+      <p class="small">The stronger prompt above gives StatWiseAI six things the weak version doesn't. Click any item to see exactly where it shows up in the example.</p>
+      <ul class="checklist frag-checklist">
+        <li>
+          <input type="checkbox" checked disabled id="w1">
+          <div class="frag-item">
+            <div class="frag-row">
+              <label for="w1">A research topic</label>
+              <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="pop-w1" data-target="w1">Show in prompt</button>
+            </div>
+            <p class="frag-pop" id="pop-w1" hidden>&ldquo;whether baseline depressive symptoms are associated with later functional limitations among older adults&rdquo;</p>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" checked disabled id="w2">
+          <div class="frag-item">
+            <div class="frag-row">
+              <label for="w2">A study design clue</label>
+              <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="pop-w2" data-target="w2">Show in prompt</button>
+            </div>
+            <p class="frag-pop" id="pop-w2" hidden>&ldquo;a longitudinal study&rdquo;</p>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" checked disabled id="w3">
+          <div class="frag-item">
+            <div class="frag-row">
+              <label for="w3">A likely outcome and predictor</label>
+              <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="pop-w3" data-target="w3">Show in prompt</button>
+            </div>
+            <p class="frag-pop" id="pop-w3" hidden>&ldquo;baseline depressive symptoms [predictor] are associated with later functional limitations [outcome]&rdquo;</p>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" checked disabled id="w4">
+          <div class="frag-item">
+            <div class="frag-row">
+              <label for="w4">A clear data privacy boundary</label>
+              <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="pop-w4" data-target="w4">Show in prompt</button>
+            </div>
+            <p class="frag-pop" id="pop-w4" hidden>&ldquo;I am not uploading participant-level data.&rdquo;</p>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" checked disabled id="w5">
+          <div class="frag-item">
+            <div class="frag-row">
+              <label for="w5">A specific request</label>
+              <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="pop-w5" data-target="w5">Show in prompt</button>
+            </div>
+            <p class="frag-pop" id="pop-w5" hidden>&ldquo;identify relevant variables, longitudinal modeling strategies, missing data concerns&rdquo;</p>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" checked disabled id="w6">
+          <div class="frag-item">
+            <div class="frag-row">
+              <label for="w6">A request for assumptions and limitations</label>
+              <button type="button" class="frag-toggle" aria-expanded="false" aria-controls="pop-w6" data-target="w6">Show in prompt</button>
+            </div>
+            <p class="frag-pop" id="pop-w6" hidden>&ldquo;assumptions to check&rdquo;</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="media-slot">
+      <span class="icon">▶</span>
+      <div>
+        <h4>Video slot — "Watch a weak prompt become a strong one"</h4>
+        <p class="small">Needs external production. Suggested treatment: screen-record a real StatWiseAI session, typing the weak prompt first, showing the generic reply, then rebuilding the prompt live using the fields below, showing the sharper reply. 90–120s, screen-capture only, voiceover optional if captioned.</p>
+        <span class="small" style="font-weight:700;">Status: storyboard ready, filming not started</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Recommended prompt structure</h2>
+      <p class="small">When asking StatWiseAI for help, include as many of the following as possible. Tap any part for what it means and an example. Each one has a matching field in the builder below.</p>
+      <div class="prompt-anatomy">
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-question">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.3" cy="8.3" r="5.3"/><line x1="16" y1="16" x2="12.4" y2="12.4"/></svg></span>
+            <span class="pa-title">Research question</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-question" hidden>
+            <p>What are you trying to learn?</p>
+            <p class="small" style="margin:0;"><em>Example: "I want to examine whether food insecurity is associated with depressive symptoms among adults."</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-dataset">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h6l4 4v12H5z"/><path d="M11 2v4h4"/><line x1="7.5" y1="10.5" x2="14" y2="10.5"/><line x1="7.5" y1="13.5" x2="14" y2="13.5"/></svg></span>
+            <span class="pa-title">Dataset / documentation source</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-dataset" hidden>
+            <p>What dataset, documentation, codebook, or output are you using?</p>
+            <p class="small" style="margin:0;"><em>Example: "I am using public NHANES documentation and variable descriptions."</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-design">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="16" rx="1"/><rect x="2" y="11" width="7" height="7" rx="1"/></svg></span>
+            <span class="pa-title">Study design</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-design" hidden>
+            <p>What is the general design?</p>
+            <p class="small" style="margin:0;"><em>See the dropdown below for the full set: cross-sectional survey, longitudinal cohort, clinical trial, administrative dataset, EHR dataset, public-use survey, repeated-measures dataset.</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-outcome">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7.3"/><circle cx="10" cy="10" r="3.8"/><circle cx="10" cy="10" r="0.7" fill="currentColor" stroke="none"/></svg></span>
+            <span class="pa-title">Outcome variable</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-outcome" hidden>
+            <p>What is the outcome?</p>
+            <p class="small" style="margin:0;"><em>Example: "The outcome is depressive symptoms, measured using a questionnaire scale."</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-predictor">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="10" x2="14.5" y2="10"/><polyline points="9.5,5 14.5,10 9.5,15"/></svg></span>
+            <span class="pa-title">Predictor / exposure</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-predictor" hidden>
+            <p>What is the main predictor, exposure, or grouping variable?</p>
+            <p class="small" style="margin:0;"><em>Example: "The main exposure is food insecurity."</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-covariates">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="10,2 18,6.5 10,11 2,6.5"/><polyline points="2,10.5 10,15 18,10.5"/><polyline points="2,14.5 10,19 18,14.5"/></svg></span>
+            <span class="pa-title">Covariates</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-covariates" hidden>
+            <p>What other variables may need to be considered?</p>
+            <p class="small" style="margin:0;"><em>Example: "Potential covariates include age, sex, race/ethnicity, education, income, insurance status, and chronic conditions."</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-structure">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="10" cy="4.5" rx="7" ry="2.3"/><path d="M3 4.5v11c0 1.3 3.1 2.3 7 2.3s7-1 7-2.3v-11"/><path d="M3 10c0 1.3 3.1 2.3 7 2.3s7-1 7-2.3"/></svg></span>
+            <span class="pa-title">Data structure</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-structure" hidden>
+            <p>What features of the data matter?</p>
+            <p class="small" style="margin:0;"><em>See the checkboxes below for the full set: survey weights, strata, primary sampling units, repeated measures, clustering, multiple time points, missing data, linked files, restricted variables, small subgroup sample sizes.</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-help">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h16v10H8l-4 3v-3H2z"/></svg></span>
+            <span class="pa-title">Type of help needed</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-help" hidden>
+            <p>Be specific about the task.</p>
+            <p class="small" style="margin:0;"><em>Examples: identify relevant documentation; suggest possible statistical models; compare analytic approaches; draft code using placeholder variable names; review this output; identify assumptions and limitations; suggest sensitivity analyses; create a reproducibility checklist.</em></p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pa-pop-format">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="3" height="3"/><rect x="2" y="8.5" width="3" height="3"/><rect x="2" y="14" width="3" height="3"/><line x1="7" y1="4.5" x2="18" y2="4.5"/><line x1="7" y1="10" x2="18" y2="10"/><line x1="7" y1="15.5" x2="18" y2="15.5"/></svg></span>
+            <span class="pa-title">Preferred output format</span>
+          </button>
+          <div class="pa-pop" id="pa-pop-format" hidden>
+            <p>Tell StatWiseAI how to respond.</p>
+            <p class="small" style="margin:0;"><em>Examples: "Provide a checklist." "Use a table." "Compare 2–3 options." "Write this for a beginner." "Give me R code with comments." "Do not write final conclusions."</em></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card card-warn">
+      <h2>Prompting reminder</h2>
+      <p style="margin-bottom:0;">Do not enter proprietary data, sensitive data, participant-level data, PHI, HIPAA-regulated information, FERPA-regulated information, or other restricted information into StatWiseAI. Use public documentation, metadata, data dictionaries, codebooks, statistical outputs, analytic code, or simulated data for practice.</p>
+    </div>
+
+    <div class="card">
+      <h2>Build your own prompt</h2>
+      <p class="small">When you're ready to write your own, include as many of the elements above as you can — the builder below assembles them into the template format.</p>
+      <p class="small">Fill in what you know. Anything left blank stays as a placeholder so you can see the full template shape.</p>
+      <form id="pb-form" class="pb-form" onsubmit="return false;">
+        <div class="grid-2">
+          <div class="pb-field">
+            <label for="pb-dataset">Dataset or documentation source</label>
+            <input type="text" id="pb-dataset" placeholder="e.g., public NHANES documentation">
+          </div>
+          <div class="pb-field">
+            <label for="pb-design">Study design</label>
+            <select id="pb-design">
+              <option value="">— select —</option>
+              <option>cross-sectional survey</option>
+              <option>longitudinal cohort</option>
+              <option>clinical trial</option>
+              <option>administrative dataset</option>
+              <option>EHR dataset</option>
+              <option>public-use survey</option>
+              <option>repeated-measures dataset</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pb-field">
+          <label for="pb-question">Research question</label>
+          <textarea id="pb-question" placeholder="e.g., Is food insecurity associated with depressive symptoms among adults?"></textarea>
+        </div>
+
+        <div class="grid-2">
+          <div class="pb-field">
+            <label for="pb-outcome">Outcome</label>
+            <input type="text" id="pb-outcome" placeholder="e.g., depressive symptoms, questionnaire scale">
+          </div>
+          <div class="pb-field">
+            <label for="pb-predictor">Main predictor / exposure</label>
+            <input type="text" id="pb-predictor" placeholder="e.g., food insecurity">
+          </div>
+        </div>
+
+        <div class="pb-field">
+          <label for="pb-covariates">Covariates</label>
+          <input type="text" id="pb-covariates" placeholder="e.g., age, sex, race/ethnicity, education, income">
+        </div>
+
+        <div class="pb-field">
+          <label>Data features</label>
+          <div class="pb-checks">
+            <label><input type="checkbox" name="features" value="survey weights"> survey weights</label>
+            <label><input type="checkbox" name="features" value="strata"> strata</label>
+            <label><input type="checkbox" name="features" value="primary sampling units"> primary sampling units</label>
+            <label><input type="checkbox" name="features" value="repeated measures"> repeated measures</label>
+            <label><input type="checkbox" name="features" value="clustering"> clustering</label>
+            <label><input type="checkbox" name="features" value="multiple time points"> multiple time points</label>
+            <label><input type="checkbox" name="features" value="missing data"> missing data</label>
+            <label><input type="checkbox" name="features" value="linked files"> linked files</label>
+            <label><input type="checkbox" name="features" value="restricted variables"> restricted variables</label>
+            <label><input type="checkbox" name="features" value="small subgroup sample sizes"> small subgroup sample sizes</label>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="pb-field">
+            <label for="pb-task">Type of help needed</label>
+            <input type="text" id="pb-task" placeholder="e.g., suggest possible statistical models">
+          </div>
+          <div class="pb-field">
+            <label for="pb-format">Preferred output format</label>
+            <input type="text" id="pb-format" placeholder="e.g., compare 2–3 options in a table">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <div class="pb-output-head">
+        <h2 style="margin:0;">Your prompt</h2>
+        <button type="button" class="btn" data-copy-target="#pb-output-text">Copy</button>
+      </div>
+      <div class="pb-output" id="pb-output-text"></div>
+      <p class="small" style="margin-top:.8em;">Paste this into StatWiseAI, then keep going — a good AI interaction usually takes more than one prompt.</p>
+    </div>
+
+    <div class="card">
+      <h2>Follow-up prompts</h2>
+      <p class="small">After StatWiseAI responds, ask some of these before you act on the answer:</p>
+      <ul>
+        <li>What assumptions are you making?</li>
+        <li>What information is missing from my prompt?</li>
+        <li>What could make this recommendation inappropriate?</li>
+        <li>What alternative approaches should I consider?</li>
+        <li>What should I verify before using this recommendation?</li>
+        <li>What would a statistical reviewer ask about this plan?</li>
+        <li>What sensitivity analyses should I consider?</li>
+        <li>How should I document this decision?</li>
+        <li>Can you revise this using placeholder variable names only?</li>
+        <li>Can you explain this in simpler language?</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><strong style="color:#fff;">CHITA · School of Nursing</strong><br>1710 Red River Street, Austin, Texas 78712<br><a href="mailto:chita@utexas.edu">chita@utexas.edu</a></div>
+    <div><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/prompting-for-data-analysis/">Source tutorial page (live UT Sites)</a></div>
+    <div class="fine">Design prototype only. Not the production UT Sites deployment.</div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+<script src="assets/module3.js"></script>
+</body>
+</html>

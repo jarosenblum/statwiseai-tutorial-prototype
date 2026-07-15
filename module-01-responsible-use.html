@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 1 · Start Here: Responsible Use — StatWiseAI Tutorial (Prototype)</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="brand-strip">
+  <span>Center for Healthcare Innovation and Technology Advancements | School of Nursing</span>
+  <span>PROTOTYPE — not affiliated with live UT Sites deployment</span>
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">
+      <span class="mark">SW</span>
+      <span class="site-title-text">
+        <strong>StatWiseAI Tutorial</strong>
+        <span>AI Literacy Learning Path</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="pill-badge">Module 1 of 9</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="path-nav" aria-label="Tutorial module path">
+    <h2>Learning path</h2>
+    <ol>
+      <li class="active"><span class="step-dot">1</span><a href="module-01-responsible-use.html">1. Start Here: Responsible Use</a><span class="tag tag-built">Prototyped</span></li>
+      <li class="locked"><span class="step-dot">2</span><a href="#" aria-disabled="true">2. AI Basics for Researchers</a><span class="tag tag-planned">Planned</span></li>
+      <li><span class="step-dot">3</span><a href="module-03-prompting.html">3. Prompting for Data Analysis</a><span class="tag tag-built">Prototyped</span></li>
+      <li class="locked"><span class="step-dot">4</span><a href="#" aria-disabled="true">4. Working with Dataset Documentation</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">5</span><a href="#" aria-disabled="true">5. Reviewing AI Outputs</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">6</span><a href="#" aria-disabled="true">6. Requesting Code</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">7</span><a href="#" aria-disabled="true">7. Reproducibility &amp; Prompt History</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">8</span><a href="#" aria-disabled="true">8. Practice: HRS &amp; NHANES</a><span class="tag tag-planned">Planned</span></li>
+      <li class="locked"><span class="step-dot">9</span><a href="#" aria-disabled="true">9. Templates &amp; Checklists</a><span class="tag tag-planned">Planned</span></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="main">
+    <div class="page-head">
+      <span class="eyebrow">Module 1 of 9 · Gate module</span>
+      <h1>Start Here: Responsible Use Rules</h1>
+      <p class="lede">Two things to know before anything else: what you can put into StatWiseAI, and what happens to it once you do.</p>
+    </div>
+
+    <div class="media-slot">
+      <span class="icon">▶</span>
+      <div>
+        <h4>Video slot — "60 seconds on what never goes into StatWiseAI"</h4>
+        <p class="small">Needs external production. Suggested script: cold open on the question "Would you paste this into a public chatbot?" → 3 quick real/not-real examples (public codebook = yes, PHI spreadsheet = no, simulated practice data = yes) → close on "when in doubt, ask your PI or IRB." Target length 45–60s, captioned, no narration required if captions are strong.</p>
+        <span class="small" style="font-weight:700;">Status: storyboard ready, filming not started</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Try it: can I upload this?</h2>
+      <p class="small">This interactive walks through the responsible-use rule so it's a decision you can make quickly, not just a paragraph you skim.</p>
+      <div class="decision-tree" id="decision-tree" data-checklist>
+        <div class="dt-trail"></div>
+        <div class="dt-question"></div>
+        <div class="dt-result"></div>
+        <div style="margin-top:1em;">
+          <button type="button" class="btn btn-quiet" data-dt-restart>Start over</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card" data-checklist>
+        <h2>Privacy checklist</h2>
+        <p class="small">Confirm each item before you open a StatWiseAI session.</p>
+        <ul class="checklist">
+          <li><input type="checkbox" id="c1"><label for="c1">I am not entering proprietary data</label></li>
+          <li><input type="checkbox" id="c2"><label for="c2">I am not entering participant-level or identifiable data</label></li>
+          <li><input type="checkbox" id="c3"><label for="c3">I am not entering PHI, HIPAA-, or FERPA-regulated information</label></li>
+          <li><input type="checkbox" id="c4"><label for="c4">I am using public documentation, simulated data, or approved summary information</label></li>
+          <li><input type="checkbox" id="c5"><label for="c5">I understand prompt and output history is stored and reviewable by the StatWiseAI research team</label></li>
+        </ul>
+        <div class="progress-track"><div class="progress-fill"></div></div>
+        <div class="progress-label">0 of 5 confirmed (0%)</div>
+      </div>
+
+      <div class="card">
+        <h2>Why this matters</h2>
+        <p>StatWiseAI automatically stores every prompt and AI-generated output. Those records support reproducibility, troubleshooting, and quality review — but it also means anything sensitive you type is retained, not just discarded after the session ends.</p>
+        <p>Access to stored history is limited to the StatWiseAI research team, but the safest assumption is: don't type anything you wouldn't want stored.</p>
+        <p class="small"><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/statwiseai-responsible-use/">Read the full source page →</a></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What's allowed vs. not allowed</h2>
+      <div class="grid-2">
+        <div>
+          <h3 style="color:#2E6B4F;">Generally fine</h3>
+          <ul>
+            <li>Simulated or practice data</li>
+            <li>Public dataset documentation, metadata, codebooks, data dictionaries</li>
+            <li>Published analytic guidance and statistical output</li>
+            <li>Analytic code (without embedded sensitive values)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:#A3332B;">Never</h3>
+          <ul>
+            <li>Proprietary or participant-level research data</li>
+            <li>Protected health information (PHI)</li>
+            <li>HIPAA- or FERPA-regulated information</li>
+            <li>Any sensitive, private, identifiable, or restricted dataset</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><strong style="color:#fff;">CHITA · School of Nursing</strong><br>1710 Red River Street, Austin, Texas 78712<br><a href="mailto:chita@utexas.edu">chita@utexas.edu</a></div>
+    <div><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/statwiseai-responsible-use/">Source tutorial page (live UT Sites)</a></div>
+    <div class="fine">Design prototype only. Not the production UT Sites deployment.</div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+<script src="assets/module1.js"></script>
+</body>
+</html>
