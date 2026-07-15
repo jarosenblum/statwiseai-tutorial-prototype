@@ -33,7 +33,7 @@ var DT_TREE = {
   no_participant: {
     type: 'result', tone: 'no',
     title: 'Do not upload this.',
-    text: 'Participant-level data, PHI, HIPAA- or FERPA-regulated information, and other restricted or identifiable data must never go into StatWiseAI. Use public documentation or simulated data instead, or work with placeholder variable names.'
+    text: 'Participant-level data, PHI, educational records, HIPAA- or FERPA-regulated information, and other restricted or identifiable data must never go into StatWiseAI. Use public documentation or simulated data instead, or work with placeholder variable names.'
   },
   ask_dua: {
     type: 'result', tone: 'ask',

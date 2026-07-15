@@ -67,7 +67,7 @@
       <div class="decision-tree" id="decision-tree" data-checklist>
         <div class="dt-trail"></div>
         <div class="dt-question"></div>
-        <div class="dt-result"></div>
+        <div class="dt-result" aria-live="polite"></div>
         <div style="margin-top:1em;">
           <button type="button" class="btn btn-quiet" data-dt-restart>Start over</button>
         </div>
@@ -81,7 +81,7 @@
         <ul class="checklist">
           <li><input type="checkbox" id="c1"><label for="c1">I am not entering proprietary data</label></li>
           <li><input type="checkbox" id="c2"><label for="c2">I am not entering participant-level or identifiable data</label></li>
-          <li><input type="checkbox" id="c3"><label for="c3">I am not entering PHI, HIPAA-, or FERPA-regulated information</label></li>
+          <li><input type="checkbox" id="c3"><label for="c3">I am not entering PHI, educational records, or HIPAA-/FERPA-regulated information</label></li>
           <li><input type="checkbox" id="c4"><label for="c4">I am using public documentation, simulated data, or approved summary information</label></li>
           <li><input type="checkbox" id="c5"><label for="c5">I understand prompt and output history is stored and reviewable by the StatWiseAI research team</label></li>
         </ul>
@@ -91,7 +91,7 @@
 
       <div class="card">
         <h2>Why this matters</h2>
-        <p>StatWiseAI automatically stores every prompt and AI-generated output. Those records support reproducibility, troubleshooting, and quality review — but it also means anything sensitive you type is retained, not just discarded after the session ends.</p>
+        <p>StatWiseAI automatically stores every prompt and AI-generated output. Those records support reproducibility, troubleshooting, quality review, and research evaluation — but it also means anything sensitive you type is retained, not just discarded after the session ends.</p>
         <p>Access to stored history is limited to the StatWiseAI research team, but the safest assumption is: don't type anything you wouldn't want stored.</p>
         <p class="small"><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/statwiseai-responsible-use/">Read the full source page →</a></p>
       </div>
@@ -104,21 +104,28 @@
           <h3 style="color:#2E6B4F;">Generally fine</h3>
           <ul>
             <li>Simulated or practice data</li>
-            <li>Public dataset documentation, metadata, codebooks, data dictionaries</li>
+            <li>Public dataset documentation, metadata, codebooks, data dictionaries, public variable descriptions</li>
             <li>Published analytic guidance and statistical output</li>
-            <li>Analytic code (without embedded sensitive values)</li>
+            <li>Analytic code</li>
           </ul>
+          <p class="small">All of the above are conditioned on use being allowed by the applicable data-use policies.</p>
         </div>
         <div>
           <h3 style="color:#A3332B;">Never</h3>
           <ul>
             <li>Proprietary or participant-level research data</li>
             <li>Protected health information (PHI)</li>
+            <li>Educational records</li>
             <li>HIPAA- or FERPA-regulated information</li>
             <li>Any sensitive, private, identifiable, or restricted dataset</li>
           </ul>
         </div>
       </div>
+    </div>
+
+    <div class="card card-warn">
+      <h2>When in doubt</h2>
+      <p style="margin-bottom:0;">If you're not sure whether something is allowed, don't upload it. Consult your PI, IRB, or appropriate data governance office first.</p>
     </div>
 
   </main>
