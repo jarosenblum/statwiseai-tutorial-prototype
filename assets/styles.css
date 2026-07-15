@@ -31,6 +31,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  min-width: 320px;
   font-family: var(--font);
   color: var(--ink);
   background: var(--paper-alt);
@@ -146,6 +147,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 .path-nav {
   position: sticky;
   top: 78px;
+  min-width: 0;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -160,16 +162,19 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
   margin-bottom: .9em;
 }
 .path-nav ol { list-style: none; margin: 0; padding: 0; }
-.path-nav li { position: relative; padding-left: 2.1em; padding-bottom: 1.15em; }
+.path-nav li {
+  position: relative; padding-bottom: 1.15em;
+  display: flex; align-items: flex-start; gap: .7em;
+}
 .path-nav li:last-child { padding-bottom: 0; }
 .path-nav li::before {
   content: "";
-  position: absolute; left: .62em; top: 1.5em; bottom: -.2em; width: 2px;
+  position: absolute; left: .68em; top: 1.55em; bottom: -.2em; width: 2px;
   background: var(--line-strong);
 }
 .path-nav li:last-child::before { display: none; }
 .step-dot {
-  position: absolute; left: 0; top: .05em;
+  flex: 0 0 auto;
   width: 1.4em; height: 1.4em; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: .68rem; font-weight: 800;
@@ -178,9 +183,10 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 }
 .path-nav li.done .step-dot { background: var(--success); border-color: var(--success); color: #fff; }
 .path-nav li.active .step-dot { background: var(--ut-orange); border-color: var(--ut-orange); color: #fff; }
-.path-nav a { display: block; text-decoration: none; color: var(--ink); font-weight: 600; font-size: .88rem; }
-.path-nav li.locked a { color: var(--ink-soft); pointer-events: none; }
-.path-nav a:hover { color: var(--ut-orange-dark); }
+.step-body { flex: 1 1 auto; min-width: 0; }
+.path-nav .step-label { display: block; text-decoration: none; color: var(--ink); font-weight: 600; font-size: .88rem; overflow-wrap: break-word; }
+.path-nav li.locked .step-label { color: var(--ink-soft); }
+.path-nav a.step-label:hover { color: var(--ut-orange-dark); }
 .path-nav .tag {
   display: inline-block; margin-top: .3em; font-size: .68rem; font-weight: 700;
   padding: .12em .5em; border-radius: 999px;
@@ -224,7 +230,7 @@ main.content { min-width: 0; }
   background: var(--ut-orange-tint); color: var(--ut-orange-dark);
   display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
 }
-.media-slot h4 { margin: 0 0 .3em; }
+.media-slot h2 { margin: 0 0 .3em; }
 .media-slot .small { margin-bottom: .5em; }
 
 /* ---------- Checklist widget ---------- */
@@ -366,6 +372,8 @@ main.content { min-width: 0; }
 /* ---------- Prompt builder widget ---------- */
 .pb-form { display: grid; gap: .9em; }
 .pb-field label { display: block; font-size: .8rem; font-weight: 700; margin-bottom: .3em; color: var(--ink-soft); }
+fieldset.pb-field { border: 0; margin: 0; padding: 0; }
+.pb-field legend { display: block; font-size: .8rem; font-weight: 700; margin-bottom: .3em; color: var(--ink-soft); padding: 0; width: 100%; }
 .pb-field input[type=text], .pb-field textarea, .pb-field select {
   width: 100%; border: 1.5px solid var(--line-strong); border-radius: var(--radius-sm);
   padding: .55em .7em; font-family: var(--font); font-size: .9rem; background: var(--paper);
@@ -399,9 +407,9 @@ main.content { min-width: 0; }
 .compare .col { border-radius: var(--radius); padding: 1em 1.2em; border: 1px solid var(--line); }
 .compare .weak { background: #FBEAE8; border-color: #F1C3BE; }
 .compare .strong { background: var(--success-tint); border-color: #BFE0D0; }
-.compare h4 { margin-top: 0; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; }
-.compare .weak h4 { color: #A3332B; }
-.compare .strong h4 { color: var(--success); }
+.compare h3 { margin-top: 0; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; }
+.compare .weak h3 { color: #A3332B; }
+.compare .strong h3 { color: var(--success); }
 .compare blockquote { margin: 0; font-style: italic; font-size: .92rem; }
 
 /* ---------- CHECK framework diagram (module 5 preview) ---------- */
@@ -433,8 +441,9 @@ main.content { min-width: 0; }
 .module-card p { font-size: .85rem; color: var(--ink-soft); margin: 0; flex-grow: 1; }
 .module-card .media-tags { display: flex; gap: .35em; flex-wrap: wrap; margin-top: .4em; }
 .media-tag { font-size: .66rem; font-weight: 700; background: var(--paper-alt); border: 1px solid var(--line); border-radius: 999px; padding: .15em .55em; color: var(--ink-soft); }
-.module-card.disabled { opacity: .68; cursor: default; }
-.module-card.disabled:hover { border-color: var(--line); }
+.module-card.disabled { cursor: default; box-shadow: none; border-style: dashed; border-color: var(--line-strong); }
+.module-card.disabled:hover { border-color: var(--line-strong); }
+.module-card.disabled .num { background: var(--line); color: var(--ink-soft); }
 
 /* ---------- Phase banner ---------- */
 .phase-banner {
