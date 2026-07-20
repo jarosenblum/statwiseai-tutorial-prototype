@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 2 · AI Basics for Researchers — StatWiseAI Tutorial (Prototype)</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="brand-strip">
+  <span>Center for Healthcare Innovation and Technology Advancements | School of Nursing</span>
+  <span>PROTOTYPE — not affiliated with live UT Sites deployment</span>
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">
+      <span class="mark">SW</span>
+      <span class="site-title-text">
+        <strong>StatWiseAI Tutorial</strong>
+        <span>AI Literacy Learning Path</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="pill-badge">Module 2 of 9</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="path-nav" aria-label="Tutorial module path">
+    <h2>Learning path</h2>
+    <ol>
+      <li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-01-responsible-use.html">1. Start Here: Responsible Use</a><span class="tag tag-built">Prototyped</span></span></li>
+      <li class="active"><span class="step-dot" aria-hidden="true">2</span><span class="step-body"><a class="step-label" href="module-02-ai-basics.html">2. AI Basics for Researchers</a><span class="tag tag-built">Prototyped</span></span></li>
+      <li><span class="step-dot" aria-hidden="true">3</span><span class="step-body"><a class="step-label" href="module-03-prompting.html">3. Prompting for Data Analysis</a><span class="tag tag-built">Prototyped</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">4</span><span class="step-body"><span class="step-label">4. Working with Dataset Documentation</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">5</span><span class="step-body"><span class="step-label">5. Reviewing AI Outputs</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">6</span><span class="step-body"><span class="step-label">6. Requesting Code</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">7</span><span class="step-body"><span class="step-label">7. Reproducibility &amp; Prompt History</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">8</span><span class="step-body"><span class="step-label">8. Practice: HRS &amp; NHANES</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">9</span><span class="step-body"><span class="step-label">9. Templates &amp; Checklists</span><span class="tag tag-planned">Planned</span></span></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="main">
+    <div class="page-head">
+      <span class="eyebrow">Module 2 of 9</span>
+      <h1>AI Basics for Researchers</h1>
+      <p class="lede">What StatWiseAI actually is, what it's good for, and where its limits are — before you start using it for real analysis planning.</p>
+    </div>
+
+    <div class="card">
+      <h2>Overview</h2>
+      <p>Artificial intelligence, or AI, refers to computer systems designed to perform tasks that typically require human reasoning, pattern recognition, language understanding, prediction, or decision support. In research settings, AI tools can help organize information, explain concepts, suggest analytic strategies, generate code, summarize output, and support documentation.</p>
+      <p>StatWiseAI uses AI to support researchers as they plan and conduct data analyses. The goal is not to have AI "do the research" for the user. The goal is to help users ask better questions, consider appropriate methods, identify assumptions, and document decisions more clearly.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>What is generative AI?</h2>
+        <p>Generative AI refers to AI systems that can create new content, such as text, code, summaries, tables, explanations, outlines, or draft analytic plans. These systems can be useful because they respond conversationally and can adapt to the context provided by the user.</p>
+        <p>However, generative AI does not understand a research project the same way a trained researcher, statistician, or domain expert does. It produces responses based on patterns in data and the instructions it receives. This means that an AI-generated answer may sound confident even when it is incomplete, overly general, or wrong.</p>
+      </div>
+      <div class="card">
+        <h2>What is a large language model?</h2>
+        <p>A large language model, or LLM, is a type of generative AI system that works with language. It can respond to questions, explain concepts, draft code, compare analytic approaches, and help users think through research decisions.</p>
+        <p>LLMs are especially useful when users provide clear context. A vague question such as "What analysis should I run?" will usually produce a vague answer. A better question describes the research question, study design, outcome variable, key predictors, dataset structure, and the type of help needed.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What AI can and can't help with</h2>
+      <div class="grid-2">
+        <div>
+          <h3 style="color:#2E6B4F;">Can help with</h3>
+          <ul>
+            <li>Clarifying a research question</li>
+            <li>Understanding dataset documentation</li>
+            <li>Identifying relevant variables from a codebook or data dictionary</li>
+            <li>Comparing possible statistical approaches</li>
+            <li>Drafting an analysis plan</li>
+            <li>Generating code in R, Python, SAS, Stata, or SPSS</li>
+            <li>Reviewing statistical output</li>
+            <li>Suggesting sensitivity analyses</li>
+            <li>Identifying assumptions and limitations</li>
+            <li>Creating reproducibility checklists</li>
+            <li>Drafting documentation for analytic decisions</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:#A3332B;">Should not be used for</h3>
+          <ul>
+            <li>Making final analytic decisions without human review</li>
+            <li>Guaranteeing that a statistical method is appropriate</li>
+            <li>Confirming that code is correct without testing</li>
+            <li>Determining IRB, HIPAA, FERPA, or data-use compliance</li>
+            <li>Making causal claims from observational data without a defensible causal design</li>
+            <li>Interpreting results beyond what the data and analysis support</li>
+            <li>Replacing consultation with a statistician, methodologist, IRB, or data governance office</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-warn">
+      <h2>Key principle</h2>
+      <p>AI output is not evidence by itself. It is a draft, suggestion, or reasoning aid.</p>
+      <p style="margin-bottom:0;">Before using AI-generated advice, check whether the response fits the research question, dataset, study design, variables, assumptions, and analytic goals. Any code should be reviewed and tested. Any interpretation should be compared with the actual statistical output and the relevant research literature.</p>
+    </div>
+
+    <div class="media-slot">
+      <span class="icon" aria-hidden="true">▶</span>
+      <div>
+        <h2>Video slot — "60 seconds on what StatWiseAI is (and isn't)"</h2>
+        <p class="small">Needs external production. Suggested treatment: plain-language cold open on "StatWiseAI is a reasoning aid, not an autopilot" → 2–3 quick examples from the can/can't-help-with lists → close on the key principle ("AI output is not evidence by itself"). Target length 45–60s, captioned, no narration required if captions are strong.</p>
+        <span class="small" style="font-weight:700;">Status: storyboard ready, filming not started</span>
+      </div>
+    </div>
+
+    <div class="card" data-checklist>
+      <h2>Quick self-check</h2>
+      <p class="small">Confirm each item before moving to the next module.</p>
+      <ul class="checklist">
+        <li><input type="checkbox" id="sc1"><label for="sc1">I understand what StatWiseAI can help with</label></li>
+        <li><input type="checkbox" id="sc2"><label for="sc2">I understand that AI-generated answers can be wrong</label></li>
+        <li><input type="checkbox" id="sc3"><label for="sc3">I know that I remain responsible for final research decisions</label></li>
+        <li><input type="checkbox" id="sc4"><label for="sc4">I know not to enter sensitive, proprietary, PHI, HIPAA-, or FERPA-regulated information</label></li>
+      </ul>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+      <div class="progress-label">0 of 4 confirmed (0%)</div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><strong style="color:#fff;">CHITA · School of Nursing</strong><br>1710 Red River Street, Austin, Texas 78712<br><a href="mailto:chita@utexas.edu">chita@utexas.edu</a></div>
+    <div><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/ai-basics-for-researchers/">Source tutorial page (live UT Sites)</a></div>
+    <div class="fine">Design prototype only. Not the production UT Sites deployment.</div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
