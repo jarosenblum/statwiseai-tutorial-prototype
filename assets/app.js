@@ -40,7 +40,26 @@ function initCopyButtons() {
   });
 }
 
+// Click-to-reveal disclosure tiles (.pa-toggle / .pa-pop) -- originally built for
+// Module 3's prompt-anatomy tiles, promoted here since Module 2's phase-grouped
+// quiz reuses the same pattern. aria-expanded + aria-controls + hidden.
+function initDisclosureToggles() {
+  document.querySelectorAll('.pa-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var popId = btn.getAttribute('aria-controls');
+      var pop = document.getElementById(popId);
+      if (!pop) return;
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      pop.hidden = expanded;
+      var indicator = btn.querySelector('.pa-indicator');
+      if (indicator) indicator.textContent = expanded ? '+' : '−';
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initChecklists();
   initCopyButtons();
+  initDisclosureToggles();
 });

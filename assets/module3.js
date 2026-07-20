@@ -66,19 +66,6 @@
   });
 })();
 
-// Recommended prompt structure — anatomy tile disclosures
-(function () {
-  var toggles = document.querySelectorAll('.pa-toggle');
-  toggles.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var popId = btn.getAttribute('aria-controls');
-      var pop = document.getElementById(popId);
-      if (!pop) return;
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      pop.hidden = expanded;
-      var indicator = btn.querySelector('.pa-indicator');
-      if (indicator) indicator.textContent = expanded ? '+' : '−';
-    });
-  });
-})();
+// Recommended prompt structure — anatomy tile disclosures.
+// Handler for .pa-toggle now lives in the shared assets/app.js (initDisclosureToggles),
+// since Module 2's phase-grouped quiz reuses the exact same pattern.

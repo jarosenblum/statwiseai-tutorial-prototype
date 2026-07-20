@@ -39,3 +39,17 @@ Re-audit after generation. Delta against v1 — every row moves from "Not yet re
 ## Still open
 
 None for Module 2's own content. Not yet done: live-browser/screen-reader check (same standing caveat as every other module — no headless browser in this sandbox) and no client sign-off yet, obviously, since this was just built.
+
+---
+
+## Redesign update — same day
+
+Rows 3, 4, 5, and 6 (generative AI definition, LLM definition, can/can't-help lists) were reworked per `module-02-widget-redesign-assessment.md` (feasibility/usefulness/accessibility assessment, presented and signed off before generation):
+
+- **Row 3** ("What is generative AI?"): now a DOM flow-diagram (capability chips → pattern-matching-not-understanding → risk callout labeled "overconfidence & sycophancy," framed as a user-side review guard, not an app feature — flagged as interpretive labeling, confirmed with sign-off).
+- **Row 4** ("What is a large language model?"): now extends the existing `.compare` card with a mini prompt→processing→output flow per column, directly visualizing the source's own vague-vs-detailed example. Deliberately kept lightweight to preview rather than duplicate Module 3's deeper prompting content.
+- **Rows 5–6** ("What AI can/can't help with"): fully reworked from a static two-column list into an interactive phase-grouped disclosure quiz — Tier C from the redesign assessment (of three tiers considered; Tier A, a full two-axis drag-sort, was assessed and explicitly not recommended). All 18 items preserved verbatim in substance, each behind a click-to-reveal verdict + one-line rationale, grouped under 5 research-phase headings (Question & Planning / Data & Documentation / Analysis & Code / Review & Interpretation / Documentation & Reproducibility) as a non-interactive advance organizer. Phase groupings are an interpretive construction — the source doesn't itself organize these items by phase — grounded in the tutorial's own module sequence rather than an invented taxonomy.
+
+**Engineering note:** the `.pa-toggle` disclosure handler was promoted from `module3.js` (where it was module-specific) into the shared `app.js`, since it's now used by both Module 2 and Module 3. No new interaction primitive was invented — Tier C's entire engineering cost was reusing an existing pattern in a new location plus writing 18 items of quiz content.
+
+**Verified:** tag balance clean on all 4 pages; `aria-controls`/`id` cross-check clean (18 pairs on Module 2, 15 still on Module 3, zero orphaned either place); CSS brace-balanced; `node --check` clean on all 3 JS files; zero remaining `<h4>` anywhere in the site.

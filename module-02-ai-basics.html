@@ -61,46 +61,219 @@
     <div class="grid-2">
       <div class="card">
         <h2>What is generative AI?</h2>
-        <p>Generative AI refers to AI systems that can create new content, such as text, code, summaries, tables, explanations, outlines, or draft analytic plans. These systems can be useful because they respond conversationally and can adapt to the context provided by the user.</p>
-        <p>However, generative AI does not understand a research project the same way a trained researcher, statistician, or domain expert does. It produces responses based on patterns in data and the instructions it receives. This means that an AI-generated answer may sound confident even when it is incomplete, overly general, or wrong.</p>
+        <div class="flow-diagram">
+          <div class="flow-step">
+            <p class="flow-label">Creates new content by matching patterns</p>
+            <div class="flow-chips">
+              <span class="flow-chip">Text</span>
+              <span class="flow-chip">Code</span>
+              <span class="flow-chip">Summaries</span>
+              <span class="flow-chip">Tables</span>
+              <span class="flow-chip">Explanations</span>
+              <span class="flow-chip">Outlines</span>
+              <span class="flow-chip">Draft plans</span>
+            </div>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-step">
+            <p class="flow-label">But doesn't understand your research the way an expert does</p>
+            <p class="small" style="margin:.3em 0 0;">It responds based on patterns in data and the instructions it receives — not genuine understanding of your project.</p>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <div class="flow-step flow-step-risk">
+            <p class="flow-label">Risk: answers can sound confident even when wrong</p>
+            <span class="tag tag-caution">Guards against: overconfidence &amp; sycophancy</span>
+          </div>
+        </div>
+        <p class="small" style="margin-top:1em;">You guard against this through review, not by trusting confidence: check every AI response against your actual research question, dataset, and study design — see <strong>Key principle</strong> below.</p>
       </div>
       <div class="card">
         <h2>What is a large language model?</h2>
         <p>A large language model, or LLM, is a type of generative AI system that works with language. It can respond to questions, explain concepts, draft code, compare analytic approaches, and help users think through research decisions.</p>
-        <p>LLMs are especially useful when users provide clear context. A vague question such as "What analysis should I run?" will usually produce a vague answer. A better question describes the research question, study design, outcome variable, key predictors, dataset structure, and the type of help needed.</p>
+        <p class="small">LLMs are especially useful when you provide clear context. Here's the same engine, given two different prompts:</p>
+        <div class="compare">
+          <div class="col weak">
+            <h3>Vague prompt</h3>
+            <div class="flow-mini">
+              <span class="flow-mini-step">"What analysis should I run?"</span>
+              <span class="flow-mini-arrow" aria-hidden="true">↓</span>
+              <span class="flow-mini-step">LLM has little to work with</span>
+              <span class="flow-mini-arrow" aria-hidden="true">↓</span>
+              <span class="flow-mini-step flow-mini-result">Vague, generic answer</span>
+            </div>
+          </div>
+          <div class="col strong">
+            <h3>Detailed prompt</h3>
+            <div class="flow-mini">
+              <span class="flow-mini-step">Research question + design + outcome + predictors + dataset structure + help needed</span>
+              <span class="flow-mini-arrow" aria-hidden="true">↓</span>
+              <span class="flow-mini-step">LLM has rich context</span>
+              <span class="flow-mini-arrow" aria-hidden="true">↓</span>
+              <span class="flow-mini-step flow-mini-result">Specific, reviewable answer</span>
+            </div>
+          </div>
+        </div>
+        <p class="small" style="margin-top:.8em;">Same underlying model both times — the difference is entirely in what you give it to work with. Module 3 walks through building a strong prompt step by step.</p>
       </div>
     </div>
 
     <div class="card">
-      <h2>What AI can and can't help with</h2>
-      <div class="grid-2">
-        <div>
-          <h3 style="color:#2E6B4F;">Can help with</h3>
-          <ul>
-            <li>Clarifying a research question</li>
-            <li>Understanding dataset documentation</li>
-            <li>Identifying relevant variables from a codebook or data dictionary</li>
-            <li>Comparing possible statistical approaches</li>
-            <li>Drafting an analysis plan</li>
-            <li>Generating code in R, Python, SAS, Stata, or SPSS</li>
-            <li>Reviewing statistical output</li>
-            <li>Suggesting sensitivity analyses</li>
-            <li>Identifying assumptions and limitations</li>
-            <li>Creating reproducibility checklists</li>
-            <li>Drafting documentation for analytic decisions</li>
-          </ul>
+      <h2>Which of these can AI help with?</h2>
+      <p class="small">For each item, decide: could StatWiseAI reasonably help with this, or not? Click to check your thinking. Grouped by where each task typically falls in a research project.</p>
+
+      <div class="phase-group">
+        <h3><span class="step-dot" aria-hidden="true">1</span> Question &amp; Planning</h3>
+        <div class="pa-list">
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q1">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Clarifying a research question</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q1" hidden><p><strong>AI can help.</strong> It can help sharpen a vague question into something answerable — but you still own the final question.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q2">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Comparing possible statistical approaches</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q2" hidden><p><strong>AI can help.</strong> It can lay out tradeoffs between methods for you to evaluate.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q3">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Drafting an analysis plan</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q3" hidden><p><strong>AI can help.</strong> It can produce a first draft — treat it as a starting point, not a final plan.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q4">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Making final analytic decisions without human review</span>
+            </button>
+            <div class="pa-pop pa-pop-no" id="pop-q4" hidden><p><strong>Should not be used for this.</strong> AI output is a draft, not a decision — the decision is still yours.</p></div>
+          </div>
         </div>
-        <div>
-          <h3 style="color:#A3332B;">Should not be used for</h3>
-          <ul>
-            <li>Making final analytic decisions without human review</li>
-            <li>Guaranteeing that a statistical method is appropriate</li>
-            <li>Confirming that code is correct without testing</li>
-            <li>Determining IRB, HIPAA, FERPA, or data-use compliance</li>
-            <li>Making causal claims from observational data without a defensible causal design</li>
-            <li>Interpreting results beyond what the data and analysis support</li>
-            <li>Replacing consultation with a statistician, methodologist, IRB, or data governance office</li>
-          </ul>
+      </div>
+
+      <div class="phase-group">
+        <h3><span class="step-dot" aria-hidden="true">2</span> Data &amp; Documentation</h3>
+        <div class="pa-list">
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q5">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Understanding dataset documentation</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q5" hidden><p><strong>AI can help.</strong> It can help translate dense codebooks and metadata into plain language.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q6">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Identifying relevant variables from a codebook or data dictionary</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q6" hidden><p><strong>AI can help.</strong> It can help scan documentation for variables that match your question.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q7">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Determining IRB, HIPAA, FERPA, or data-use compliance</span>
+            </button>
+            <div class="pa-pop pa-pop-no" id="pop-q7" hidden><p><strong>Should not be used for this.</strong> Compliance determinations belong to your IRB, PI, or data governance office.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-group">
+        <h3><span class="step-dot" aria-hidden="true">3</span> Analysis &amp; Code</h3>
+        <div class="pa-list">
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q8">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Generating code in R, Python, SAS, Stata, or SPSS</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q8" hidden><p><strong>AI can help.</strong> It can draft code — you still need to review and test it before running it on real data.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q9">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Suggesting sensitivity analyses</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q9" hidden><p><strong>AI can help.</strong> It can propose additional checks worth running.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q10">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Guaranteeing that a statistical method is appropriate</span>
+            </button>
+            <div class="pa-pop pa-pop-no" id="pop-q10" hidden><p><strong>Should not be used for this.</strong> AI can't guarantee appropriateness for your specific data and design.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q11">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Confirming that code is correct without testing</span>
+            </button>
+            <div class="pa-pop pa-pop-no" id="pop-q11" hidden><p><strong>Should not be used for this.</strong> Only running and testing the code actually confirms it works.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q12">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Making causal claims from observational data without a defensible causal design</span>
+            </button>
+            <div class="pa-pop pa-pop-no" id="pop-q12" hidden><p><strong>Should not be used for this.</strong> AI can't supply the causal design your data doesn't have.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-group">
+        <h3><span class="step-dot" aria-hidden="true">4</span> Review &amp; Interpretation</h3>
+        <div class="pa-list">
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q13">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Reviewing statistical output</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q13" hidden><p><strong>AI can help.</strong> It can help you read and describe output — you confirm it matches what the analysis actually shows.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q14">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Identifying assumptions and limitations</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q14" hidden><p><strong>AI can help.</strong> It can help surface assumptions you might otherwise miss.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q15">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Interpreting results beyond what the data and analysis support</span>
+            </button>
+            <div class="pa-pop pa-pop-no" id="pop-q15" hidden><p><strong>Should not be used for this.</strong> AI can overreach on interpretation just as easily as a person can — check it against what the output actually shows.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q16">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Replacing consultation with a statistician, methodologist, IRB, or data governance office</span>
+            </button>
+            <div class="pa-pop pa-pop-no" id="pop-q16" hidden><p><strong>Should not be used for this.</strong> AI is a reasoning aid, not a substitute for expert consultation.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-group">
+        <h3><span class="step-dot" aria-hidden="true">5</span> Documentation &amp; Reproducibility</h3>
+        <div class="pa-list">
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q17">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Creating reproducibility checklists</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q17" hidden><p><strong>AI can help.</strong> A great fit for the AI Use Log covered in Module 7.</p></div>
+          </div>
+          <div class="pa-tile">
+            <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-q18">
+              <span class="pa-indicator" aria-hidden="true">?</span>
+              <span class="pa-title">Drafting documentation for analytic decisions</span>
+            </button>
+            <div class="pa-pop pa-pop-ok" id="pop-q18" hidden><p><strong>AI can help.</strong> It can draft the documentation — you confirm it accurately reflects what you actually decided and why.</p></div>
+          </div>
         </div>
       </div>
     </div>

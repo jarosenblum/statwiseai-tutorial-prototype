@@ -193,6 +193,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 }
 .tag.tag-built { background: var(--success-tint); color: var(--success); }
 .tag.tag-planned { background: var(--warn-tint); color: var(--warn); }
+.tag.tag-caution { background: var(--warn-tint); color: var(--warn); }
 
 /* ---------- Main content ---------- */
 main.content { min-width: 0; }
@@ -411,6 +412,40 @@ fieldset.pb-field { border: 0; margin: 0; padding: 0; }
 .compare .weak h3 { color: #A3332B; }
 .compare .strong h3 { color: var(--success); }
 .compare blockquote { margin: 0; font-style: italic; font-size: .92rem; }
+
+/* ---------- Flow diagram (concept infographics, e.g. module 2) ---------- */
+.flow-diagram { display: flex; flex-direction: column; align-items: stretch; gap: .2em; margin: 1em 0; }
+.flow-step {
+  background: var(--paper-alt); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: .9em 1.1em; text-align: center;
+}
+.flow-step-risk { background: var(--warn-tint); border-color: #F0DDA6; }
+.flow-label { margin: 0; font-weight: 700; font-size: .92rem; color: var(--ink); }
+.flow-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .4em; margin-top: .6em; }
+.flow-chip {
+  font-size: .76rem; font-weight: 600; background: var(--paper); border: 1px solid var(--line-strong);
+  border-radius: 999px; padding: .25em .75em; color: var(--ink-soft);
+}
+.flow-arrow { text-align: center; font-size: 1.1rem; color: var(--line-strong); line-height: 1; }
+
+/* ---------- Flow-mini (prompt -> processing -> output, inside .compare columns) ---------- */
+.flow-mini { display: flex; flex-direction: column; gap: .5em; margin-top: .7em; }
+.flow-mini-step {
+  display: block; font-size: .82rem; background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); padding: .5em .7em; color: var(--ink-soft);
+}
+.flow-mini-result { font-weight: 700; color: var(--ink); }
+.flow-mini-arrow { display: block; text-align: center; font-size: .9rem; color: var(--line-strong); }
+
+/* ---------- Phase-grouped disclosure quiz (module 2 "can/can't help" reuse of .pa-toggle) ---------- */
+.phase-group { margin-top: 1.4em; }
+.phase-group:first-of-type { margin-top: .3em; }
+.phase-group h3 { display: flex; align-items: center; gap: .5em; font-size: .95rem; margin-bottom: .6em; }
+.pa-list { display: flex; flex-direction: column; gap: .6em; }
+.pa-pop.pa-pop-ok { border-left-color: var(--success); }
+.pa-pop.pa-pop-no { border-left-color: #A3332B; }
+.pa-pop-ok strong { color: var(--success); }
+.pa-pop-no strong { color: #A3332B; }
 
 /* ---------- CHECK framework diagram (module 5 preview) ---------- */
 .check-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .7em; }
