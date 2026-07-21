@@ -98,3 +98,19 @@ Live test (Safari + VoiceOver, macOS) found: VoiceOver's own linear/swipe readin
 **Verified:** `node --check` clean; HTML tag-balance clean; CSS brace count unchanged at 213/213 (net-neutral edit); no leftover references to the removed 3D properties outside of explanatory comments; all 4 new ids (`cd-btn-a`, `cd-face-a`, `cd-btn-b`, `cd-face-b`) present exactly once.
 
 **Still open:** re-test with Safari + VoiceOver to confirm Tab now reaches both cards — this fix is based on eliminating the suspect CSS category, not on reproducing and re-testing the original bug in this sandbox.
+
+---
+
+## Disclosure-panel VoiceOver announcement fix — same day, both Module 2 and Module 3
+
+Live test confirmed the flip-card fix (above) worked, and separately reported: the `.pa-toggle` accordion titles (Modules 2 and 3, shared `initDisclosureToggles()` pattern) read fine as Tab stops, but the revealed `.pa-pop` panel text was not announced by VoiceOver after expanding.
+
+**Diagnosis:** toggling the native `hidden` attribute on an already-present, unchanged text node is not a reliably-triggering mutation for `aria-live` announcement across browsers/AT — some engines only treat genuinely new text (added or changed content) as announce-worthy, not a visibility change on existing content. This affects both modules identically because both reuse the same shared `app.js` function and the same `.pa-toggle`/`.pa-pop` markup pattern.
+
+**Fix:** `initDisclosureToggles()` (shared, `assets/app.js`) now writes the revealed panel's text into a persistent, always-present live region on expand (and clears it on collapse), scoped to the nearest enclosing `.card`. This is the same technique already confirmed working in this environment for the self-check and flip-card feedback text (a real element present at page load, whose text content is directly reassigned) — not a new, unverified mechanism. The live region itself uses a new `.sr-only` utility class (clip-based visually-hidden-but-AT-exposed technique, WCAG technique C7/G94 — distinct from `display:none`/`hidden`, which *do* get removed from the accessibility tree) so it doesn't duplicate visible text on the page; the `.pa-pop` panel remains the visible content, unchanged.
+
+One `<p class="sr-only" data-pa-live aria-live="polite"></p>` element added to each page's relevant card (Module 2's phase-quiz card, Module 3's prompt-anatomy card) — no other markup changed.
+
+**Verified:** `node --check` clean on `app.js`; HTML tag-balance clean on both module-02 and module-03; CSS brace count 214/214 (up from 213, one new rule accounted for); `data-pa-live` present exactly once per page.
+
+**Still open:** re-test with Safari + VoiceOver to confirm the expanded panel text is now announced on both modules.

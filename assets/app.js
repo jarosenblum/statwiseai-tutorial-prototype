@@ -54,6 +54,15 @@ function initDisclosureToggles() {
       pop.hidden = expanded;
       var indicator = btn.querySelector('.pa-indicator');
       if (indicator) indicator.textContent = expanded ? '+' : '−';
+
+      // Toggling `hidden` on the panel itself is not a reliable aria-live
+      // trigger across browsers/AT (the text node was already present, just
+      // unrendered -- some screen readers don't treat that as "new" content).
+      // Force the announcement by writing into a persistent, always-present
+      // live region instead, scoped to the enclosing card.
+      var card = btn.closest('.card');
+      var live = card && card.querySelector('[data-pa-live]');
+      if (live) live.textContent = expanded ? '' : pop.textContent.trim();
     });
   });
 }
