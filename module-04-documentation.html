@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 4 · Working with Dataset Documentation — StatWiseAI Tutorial (Prototype)</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="brand-strip">
+  <span>Center for Healthcare Innovation and Technology Advancements | School of Nursing</span>
+  <span>PROTOTYPE — not affiliated with live UT Sites deployment</span>
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="index.html">
+      <span class="mark">SW</span>
+      <span class="site-title-text">
+        <strong>StatWiseAI Tutorial</strong>
+        <span>AI Literacy Learning Path</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="pill-badge">Module 4 of 9</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="path-nav" aria-label="Tutorial module path">
+    <h2>Learning path</h2>
+    <ol>
+      <li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-01-responsible-use.html">1. Start Here: Responsible Use</a><span class="tag tag-built">Prototyped</span></span></li>
+      <li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-02-ai-basics.html">2. AI Basics for Researchers</a><span class="tag tag-built">Prototyped</span></span></li>
+      <li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-03-prompting.html">3. Prompting for Data Analysis</a><span class="tag tag-built">Prototyped</span></span></li>
+      <li class="active"><span class="step-dot" aria-hidden="true">4</span><span class="step-body"><a class="step-label" href="module-04-documentation.html">4. Working with Dataset Documentation</a><span class="tag tag-built">Prototyped</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">5</span><span class="step-body"><span class="step-label">5. Reviewing AI Outputs</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">6</span><span class="step-body"><span class="step-label">6. Requesting Code</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">7</span><span class="step-body"><span class="step-label">7. Reproducibility &amp; Prompt History</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">8</span><span class="step-body"><span class="step-label">8. Practice: HRS &amp; NHANES</span><span class="tag tag-planned">Planned</span></span></li>
+      <li class="locked"><span class="step-dot" aria-hidden="true">9</span><span class="step-body"><span class="step-label">9. Templates &amp; Checklists</span><span class="tag tag-planned">Planned</span></span></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="main">
+    <div class="page-head">
+      <span class="eyebrow">Module 4 of 9</span>
+      <h1>Working with Dataset Documentation</h1>
+      <p class="lede">Good analysis starts before any variable is chosen — with the documentation that explains what a dataset actually is.</p>
+      <p>StatWiseAI is designed to help researchers work with publicly available datasets rather than raw restricted datasets. This is especially important for biomedical, social, behavioral, educational, and health-related datasets, where data-use agreements, privacy rules, IRB requirements, or federal regulations may restrict if and how data can be shared.</p>
+    </div>
+
+    <div class="card card-warn">
+      <h2>Reminder: what can't go in StatWiseAI</h2>
+      <p style="margin-bottom:0;">Users should not upload proprietary data, sensitive data, participant-level data, PHI, HIPAA-regulated information, FERPA-regulated information, or other restricted information. Instead, users should work with materials that are public, approved, simulated, aggregated, or otherwise allowed under the relevant data-use policies.</p>
+    </div>
+
+    <div class="card">
+      <h2>Documentation map: from materials to what StatWiseAI can do</h2>
+      <p class="stat-lead">
+        <span class="stat-num">13</span><span class="stat-text">things you can provide</span>
+        <span class="stat-arrow" aria-hidden="true">→</span>
+        <span class="sr-only">, leading to</span>
+        <span class="stat-num">10</span><span class="stat-text">things StatWiseAI helps you do</span>
+      </p>
+
+      <div class="doc-band doc-band-provide">
+        <h3>You provide</h3>
+
+        <div class="doc-subgrid">
+          <div class="doc-subgroup">
+            <h4>Documentation &amp; reference</h4>
+            <ul>
+              <li>Public dataset documentation.</li>
+              <li>Metadata.</li>
+              <li>Data dictionaries.</li>
+              <li>Codebooks.</li>
+              <li>Variable descriptions.</li>
+              <li>Survey documentation.</li>
+              <li>Public analytic guidelines.</li>
+              <li>Questionnaires.</li>
+            </ul>
+          </div>
+
+          <div class="doc-subgroup">
+            <h4>Analytic outputs</h4>
+            <ul>
+              <li>Statistical output.</li>
+              <li>Analytic code.</li>
+            </ul>
+          </div>
+
+          <div class="doc-subgroup">
+            <h4>Practice &amp; derived data</h4>
+            <ul>
+              <li>Simulated practice data.</li>
+              <li>De-identified summary information, when allowed.</li>
+              <li>Aggregated tables, when disclosure risk has been considered.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-band doc-band-help">
+        <h3>StatWiseAI helps you do</h3>
+
+        <div class="doc-subgrid">
+          <div class="doc-subgroup">
+            <h4>Understanding the dataset</h4>
+            <ul>
+              <li>Understand how a dataset is organized.</li>
+              <li>Recognize important design features.</li>
+            </ul>
+          </div>
+
+          <div class="doc-subgroup">
+            <h4>Identifying variables &amp; measures</h4>
+            <ul>
+              <li>Identify candidate variables for a research question.</li>
+              <li>Compare measures across survey waves or modules.</li>
+              <li>Locate outcome, exposure, and covariate concepts.</li>
+              <li>Identify missing data concerns.</li>
+            </ul>
+          </div>
+
+          <div class="doc-subgroup">
+            <h4>Planning &amp; drafting</h4>
+            <ul>
+              <li>Create a preliminary analysis plan.</li>
+              <li>Draft code using placeholder variable names.</li>
+            </ul>
+          </div>
+
+          <div class="doc-subgroup">
+            <h4>Consultation &amp; documentation</h4>
+            <ul>
+              <li>Prepare questions for a statistician or data expert.</li>
+              <li>Document analytic decisions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Worked examples</h2>
+      <p class="small">Click each example to see the prompt and what StatWiseAI could help identify.</p>
+      <p class="sr-only" data-pa-live aria-live="polite"></p>
+
+      <div class="pa-list">
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-ex1">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-title">Example: reading a codebook</span>
+          </button>
+          <div class="pa-pop" id="pop-ex1" hidden>
+            <p>A user might paste a short public codebook excerpt or describe relevant variables and ask:</p>
+            <blockquote>&ldquo;I am reviewing public documentation for a national health survey. The codebook includes variables related to depressive symptoms, demographic characteristics, and health conditions. Help me identify which variables might be candidates for the outcome, exposure, and covariates in an analysis of depressive symptoms among adults. Do not assume these are final analytic choices. Provide a checklist of documentation items I should verify.&rdquo;</blockquote>
+            <p style="margin-bottom:0;">A useful response should not simply choose variables. It should help the user think through measurement, coding, eligibility, missingness, survey design, and interpretation.</p>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-ex2">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-title">Example: using public HRS documentation</span>
+          </button>
+          <div class="pa-pop" id="pop-ex2" hidden>
+            <p>The Health and Retirement Study (HRS) describes itself as a longitudinal panel study of a representative sample of approximately 20,000 people in the United States, and its documentation page includes questionnaires, codebooks, data descriptions, and related study content. A user might ask:</p>
+            <blockquote>&ldquo;I am using public HRS documentation to plan a longitudinal analysis of depressive symptoms and later functional limitations. I am not uploading participant-level data. Help me identify what types of HRS documentation I should review before selecting variables and models.&rdquo;</blockquote>
+            <p>StatWiseAI could help the user identify documentation areas such as:</p>
+            <ul style="margin-bottom:0;">
+              <li>Questionnaires.</li>
+              <li>Codebooks.</li>
+              <li>Data descriptions.</li>
+              <li>Survey design information.</li>
+              <li>Weights.</li>
+              <li>Cross-wave variable availability.</li>
+              <li>Missing data and attrition information.</li>
+              <li>User guides or documentation reports.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pa-tile">
+          <button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-ex3">
+            <span class="pa-indicator" aria-hidden="true">+</span>
+            <span class="pa-title">Example: using public NHANES documentation</span>
+          </button>
+          <div class="pa-pop" id="pop-ex3" hidden>
+            <p>The National Health and Nutrition Examination Survey (NHANES) provides access to questionnaires, datasets, documentation, and a data analysis tutorial, and CDC describes NHANES as the only national health survey that includes health exams and laboratory tests. A user might ask:</p>
+            <blockquote>&ldquo;I am using public NHANES documentation to plan an analysis of food insecurity and depressive symptoms among adults. I am not uploading raw data. Help me identify relevant documentation, survey design features, possible variables, and common analysis mistakes to avoid.&rdquo;</blockquote>
+            <p>StatWiseAI could help the user think through:</p>
+            <ul style="margin-bottom:0;">
+              <li>Questionnaire components.</li>
+              <li>Examination and laboratory components.</li>
+              <li>Demographic files.</li>
+              <li>Variable search tools.</li>
+              <li>Survey weights.</li>
+              <li>Strata and primary sampling units.</li>
+              <li>Combining survey cycles.</li>
+              <li>Eligibility and age restrictions.</li>
+              <li>Missing data.</li>
+              <li>Subsample weights, if specialized measures are used.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card doc-checklist" data-checklist>
+      <h2>Documentation review checklist</h2>
+      <p class="small">Before asking StatWiseAI for analysis recommendations, try to identify — with an illustration of what that might look like. If you already have something in mind, type it in and the box checks itself; your notes are collected below. You can also just check items off without writing anything.</p>
+      <ul class="checklist checklist-examples">
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc1"><label for="dc1">What dataset or documentation source is being used?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>Public NHANES documentation, or a specific HRS documentation page.</div>
+          <div class="dc-input"><label for="dc1-input">Your answer (optional)</label><textarea id="dc1-input" data-dc-label="What dataset or documentation source is being used?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc2"><label for="dc2">What population does the dataset represent?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>HRS: a representative sample of approximately 20,000 U.S. adults.</div>
+          <div class="dc-input"><label for="dc2-input">Your answer (optional)</label><textarea id="dc2-input" data-dc-label="What population does the dataset represent?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc3"><label for="dc3">What years, waves, or cycles are relevant?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>A specific NHANES survey cycle, or a defined set of HRS waves.</div>
+          <div class="dc-input"><label for="dc3-input">Your answer (optional)</label><textarea id="dc3-input" data-dc-label="What years, waves, or cycles are relevant?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc4"><label for="dc4">What is the outcome variable?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>Depressive symptoms, as used in the worked examples above.</div>
+          <div class="dc-input"><label for="dc4-input">Your answer (optional)</label><textarea id="dc4-input" data-dc-label="What is the outcome variable?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc5"><label for="dc5">What is the exposure or main predictor?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>Food insecurity (NHANES example) or baseline symptom severity.</div>
+          <div class="dc-input"><label for="dc5-input">Your answer (optional)</label><textarea id="dc5-input" data-dc-label="What is the exposure or main predictor?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc6"><label for="dc6">What covariates may be needed?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>Demographic characteristics and existing health conditions.</div>
+          <div class="dc-input"><label for="dc6-input">Your answer (optional)</label><textarea id="dc6-input" data-dc-label="What covariates may be needed?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc7"><label for="dc7">Are survey weights required?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>Yes for NHANES — it uses complex survey sampling weights.</div>
+          <div class="dc-input"><label for="dc7-input">Your answer (optional)</label><textarea id="dc7-input" data-dc-label="Are survey weights required?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc8"><label for="dc8">Are there strata, PSUs, clusters, or repeated measures?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>NHANES uses strata and primary sampling units (PSUs).</div>
+          <div class="dc-input"><label for="dc8-input">Your answer (optional)</label><textarea id="dc8-input" data-dc-label="Are there strata, PSUs, clusters, or repeated measures?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc9"><label for="dc9">Are variables measured consistently across time?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>Check cross-wave variable availability, as HRS documentation does.</div>
+          <div class="dc-input"><label for="dc9-input">Your answer (optional)</label><textarea id="dc9-input" data-dc-label="Are variables measured consistently across time?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc10"><label for="dc10">Are there restricted variables that cannot be uploaded or described in detail?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>Participant-level data should never be uploaded, restricted or not.</div>
+          <div class="dc-input"><label for="dc10-input">Your answer (optional)</label><textarea id="dc10-input" data-dc-label="Are there restricted variables that cannot be uploaded or described in detail?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc11"><label for="dc11">Are there missing data or attrition concerns?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>HRS attrition across waves, or NHANES item-level missing data.</div>
+          <div class="dc-input"><label for="dc11-input">Your answer (optional)</label><textarea id="dc11-input" data-dc-label="Are there missing data or attrition concerns?" rows="1"></textarea></div>
+        </li>
+        <li>
+          <div class="dc-q"><input type="checkbox" id="dc12"><label for="dc12">Are there official analytic guidelines?</label></div>
+          <div class="dc-ex"><span class="dc-ex-tag">Example</span>NHANES analytic guidance and user guides on using survey weights.</div>
+          <div class="dc-input"><label for="dc12-input">Your answer (optional)</label><textarea id="dc12-input" data-dc-label="Are there official analytic guidelines?" rows="1"></textarea></div>
+        </li>
+      </ul>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+      <div class="progress-label">0 of 12 confirmed (0%)</div>
+    </div>
+
+    <div class="card">
+      <div class="pb-output-head">
+        <h2 style="margin:0;">Your documentation review notes</h2>
+        <button type="button" class="btn" data-copy-target="#dc-summary-text">Copy</button>
+      </div>
+      <p class="small">Fills in automatically from what you type above — nothing is sent anywhere, this stays on your screen.</p>
+      <div class="pb-output" id="dc-summary-text">
+        <p class="small" id="dc-summary-empty" style="margin:0;">Nothing written yet — type an answer to any item above and it will appear here.</p>
+      </div>
+    </div>
+
+    <div class="card card-warn">
+      <h2>Key reminder</h2>
+      <p style="margin-bottom:0;">Dataset documentation is not just administrative background. It is part of the analytic evidence. Good analysis depends on understanding how the data were collected, who is represented, how variables were measured, and what design features must be addressed.</p>
+    </div>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div><strong style="color:#fff;">CHITA · School of Nursing</strong><br>1710 Red River Street, Austin, Texas 78712<br><a href="mailto:chita@utexas.edu">chita@utexas.edu</a></div>
+    <div><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/working-with-dataset-documentation/">Source tutorial page (live UT Sites)</a></div>
+    <div class="fine">Design prototype only. Not the production UT Sites deployment.</div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+<script src="assets/module4.js"></script>
+</body>
+</html>

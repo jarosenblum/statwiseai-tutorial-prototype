@@ -248,6 +248,38 @@ main.content { min-width: 0; }
 .checklist label { cursor: pointer; }
 .checklist li.checked label { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: var(--line-strong); }
 
+/* ---------- Checklist + worked example + free-text answer per item (module 4) ---------- */
+.checklist-examples li {
+  display: grid; grid-template-columns: 1.15fr 1fr; grid-template-areas: "q ex" "input input";
+  gap: .3em 1.4em; align-items: start; padding: .85em 0;
+}
+@media (max-width: 640px) {
+  .checklist-examples li { grid-template-columns: 1fr; grid-template-areas: "q" "ex" "input"; gap: .5em; }
+}
+.checklist-examples .dc-q { grid-area: q; display: flex; align-items: flex-start; gap: .7em; }
+.checklist-examples .dc-q input[type=checkbox] { margin-top: .2em; width: 18px; height: 18px; accent-color: var(--ut-orange); flex-shrink: 0; }
+.checklist-examples .dc-ex {
+  grid-area: ex; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: .5em .75em; font-size: .84rem; color: var(--ink-soft);
+}
+.checklist-examples .dc-ex-tag {
+  display: block; font-size: .66rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--ut-orange-dark); margin-bottom: .15em;
+}
+.checklist-examples .dc-input { grid-area: input; margin-top: .3em; }
+.checklist-examples .dc-input label {
+  display: block; font-size: .7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--ink-soft); margin-bottom: .25em;
+}
+.checklist-examples .dc-input textarea {
+  width: 100%; min-height: 2.6em; resize: vertical; font: inherit; font-size: .88rem;
+  padding: .5em .65em; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--paper);
+}
+
+/* Visually distinct card treatment so the checklist stands apart from other cards */
+.card.doc-checklist { background: var(--ut-orange-tint); border-top: 4px solid var(--ut-orange); }
+.card.doc-checklist h2 { color: var(--ut-orange-dark); }
+
 /* ---------- Quick self-check: function-select quiz (Module 2) ---------- */
 .fn-select-list { list-style: none; margin: 0; padding: 0; }
 .fn-select-list li { padding: .6em .7em; border-bottom: 1px solid var(--line); border-radius: var(--radius-sm); }
@@ -348,6 +380,8 @@ main.content { min-width: 0; }
 }
 .pa-pop p { margin: 0 0 .4em; }
 .pa-pop p:last-child { margin-bottom: 0; }
+.pa-pop blockquote { margin: .5em 0; padding-left: .8em; border-left: 2px solid var(--line-strong); font-style: italic; }
+.pa-pop ul { margin: .3em 0 .4em; padding-left: 1.1em; }
 
 /* Visually hidden but still exposed to assistive tech -- standard clip-based
    technique (WCAG technique C7/G94), distinct from display:none/hidden,
@@ -473,6 +507,34 @@ fieldset.pb-field { border: 0; margin: 0; padding: 0; }
 .compare .weak h3 { color: #A3332B; }
 .compare .strong h3 { color: var(--success); }
 .compare blockquote { margin: 0; font-style: italic; font-size: .92rem; }
+
+/* ---------- Doc map: big-number lead-in + full-width banded sections (module 4) ---------- */
+.stat-lead { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5em .7em; margin: .2em 0 1.2em; }
+.stat-num { font-size: 2.1rem; font-weight: 800; color: var(--ut-orange); line-height: 1; }
+.stat-text { font-size: .95rem; color: var(--ink-soft); font-weight: 600; }
+.stat-arrow { font-size: 1.3rem; color: var(--line-strong); align-self: center; }
+
+.doc-band { border-radius: var(--radius); padding: 1em 1.2em; margin-bottom: 1em; }
+.doc-band:last-child { margin-bottom: 0; }
+.doc-band h3 { margin: 0 0 .5em; font-size: .95rem; }
+.doc-band ul { margin: 0; padding-left: 1.2em; }
+.doc-band-provide { background: var(--paper-alt); border: 1px solid var(--line); border-left: 4px solid var(--line-strong); }
+.doc-band-help { background: var(--ut-orange-tint); border: 1px solid var(--line); border-left: 4px solid var(--ut-orange); }
+.doc-band-help h3 { color: var(--ut-orange-dark); }
+
+.doc-subgroup { margin-top: 1em; }
+.doc-subgroup:first-child { margin-top: .3em; }
+.doc-subgroup h4 { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin: 0 0 .4em; }
+.doc-subgroup ul { margin: 0; padding-left: 1.2em; }
+
+/* CSS multi-column, not grid: lets the browser balance column height by content
+   volume (browsers default to column-fill:balance for an unfragmented container),
+   rather than forcing a fixed left/right split that ignores how many items are in
+   each sub-group. break-inside:avoid keeps each sub-group whole within one column. */
+.doc-subgrid { columns: 2; column-gap: 1.6em; margin-top: .3em; }
+.doc-subgrid .doc-subgroup { margin-top: 0; margin-bottom: 1.1em; break-inside: avoid; }
+.doc-subgrid .doc-subgroup:last-child { margin-bottom: 0; }
+@media (max-width: 640px) { .doc-subgrid { columns: 1; } }
 
 /* ---------- Flow diagram (concept infographics, e.g. module 2) ---------- */
 .flow-diagram { display: flex; flex-direction: column; align-items: stretch; gap: .2em; margin: 1em 0; }
