@@ -50,10 +50,12 @@
 })();
 
 // Confident doesn't mean correct — flip-card demo (Module 2)
-// The visual flip is a CSS transform (skipped under prefers-reduced-motion).
-// What assistive tech hears is controlled separately via aria-hidden on each
-// face, toggled the instant a choice is made — independent of the animation,
-// since backface-visibility only affects paint, not the accessibility tree.
+// Visual "flip" is a 2D scaleX squeeze, not a 3D rotateY transform: a 3D
+// perspective/preserve-3d flip on the focusable button broke Safari+VoiceOver
+// Tab-key navigation between the two cards (confirmed via live testing).
+// Each card has one content region, swapped directly — no stacked front/back
+// nodes, so there's no aria-hidden sync to get wrong and nothing for that
+// class of WebKit bug to attach to.
 (function () {
   var widget = document.getElementById('confidence-demo');
   if (!widget) return;
@@ -105,18 +107,11 @@
   var questionEl = document.getElementById('cd-question');
   var feedbackEl = document.getElementById('cd-feedback');
   var nextBtn = document.getElementById('cd-next-btn');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var cards = {
-    a: {
-      btn: document.getElementById('cd-btn-a'),
-      front: document.getElementById('cd-front-a'),
-      back: document.getElementById('cd-back-a')
-    },
-    b: {
-      btn: document.getElementById('cd-btn-b'),
-      front: document.getElementById('cd-front-b'),
-      back: document.getElementById('cd-back-b')
-    }
+    a: { btn: document.getElementById('cd-btn-a'), face: document.getElementById('cd-face-a') },
+    b: { btn: document.getElementById('cd-btn-b'), face: document.getElementById('cd-face-b') }
   };
 
   function escapeHtml(str) {
@@ -125,18 +120,26 @@
     return div.innerHTML;
   }
 
+  function reveal(card, data) {
+    card.btn.classList.remove('cd-squeezing');
+    card.btn.classList.add(data.right ? 'cd-right' : 'cd-wrong');
+    card.face.innerHTML =
+      '<strong>' + (data.right ? 'Confident and right.' : 'Confident, but wrong.') + '</strong>' +
+      '<span>' + escapeHtml(data.why) + '</span>';
+  }
+
   function choose(key) {
     var ex = EXAMPLES[idx];
     ['a', 'b'].forEach(function (k) {
       var card = cards[k];
       var data = ex[k];
-      card.btn.classList.add('flipped', data.right ? 'cd-right' : 'cd-wrong');
       card.btn.disabled = true;
-      card.front.setAttribute('aria-hidden', 'true');
-      card.back.removeAttribute('aria-hidden');
-      card.back.innerHTML =
-        '<strong>' + (data.right ? 'Confident and right.' : 'Confident, but wrong.') + '</strong>' +
-        '<span>' + escapeHtml(data.why) + '</span>';
+      if (reduceMotion) {
+        reveal(card, data);
+      } else {
+        card.btn.classList.add('cd-squeezing');
+        setTimeout(function () { reveal(card, data); }, 220);
+      }
     });
     var chosenRight = ex[key].right;
     feedbackEl.textContent = chosenRight
@@ -153,11 +156,8 @@
     ['a', 'b'].forEach(function (key) {
       var card = cards[key];
       var data = ex[key];
-      card.front.innerHTML = '<span class="cd-label">Response ' + key.toUpperCase() + '</span>' + escapeHtml(data.text);
-      card.back.innerHTML = '';
-      card.back.setAttribute('aria-hidden', 'true');
-      card.front.removeAttribute('aria-hidden');
-      card.btn.classList.remove('flipped', 'cd-right', 'cd-wrong');
+      card.btn.classList.remove('cd-squeezing', 'cd-right', 'cd-wrong');
+      card.face.innerHTML = '<span class="cd-label">Response ' + key.toUpperCase() + '</span>' + escapeHtml(data.text);
       card.btn.disabled = false;
       card.btn.onclick = (function (k) { return function () { choose(k); }; })(key);
     });

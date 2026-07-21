@@ -84,3 +84,17 @@ Three example pairs (missing data / p-value interpretation / odds ratio), each a
 **Verified:** `node --check` clean; HTML tag-balance clean; all 12 new ids present exactly once and match JS references; CSS brace count 213/213 (up from 194, additions accounted for).
 
 **Still open:** live-browser/screen-reader verification of the actual flip behavior (same standing caveat — no headless/real browser in this sandbox, so the `aria-hidden` sync is verified by code inspection, not by testing with an actual screen reader). No client sign-off yet.
+
+---
+
+## Flip-card fix — live VoiceOver test, same day
+
+Live test (Safari + VoiceOver, macOS) found: VoiceOver's own linear/swipe reading of the cards worked correctly, but literal Tab-key navigation could not reach both card buttons — shift+Tab from the widget jumped back to the nav rail instead of stopping on the second card.
+
+**Diagnosis:** the original build used a true 3D flip (`perspective` on a wrapper, `transform-style: preserve-3d` + `rotateY` on the focusable `<button>`, `backface-visibility: hidden` on two stacked front/back faces). This is a known category of WebKit issue — 3D-transformed focusable elements can be dropped from or reordered in the keyboard tab sequence in Safari. Not independently reproduced in this sandbox (no live browser here); diagnosis is based on the reported symptom pattern matching this known bug class, not a confirmed root-cause trace.
+
+**Fix (not a patch — a rebuild of the mechanism):** removed all 3D transform properties from the interactive elements. The flip is now a 2D `scaleX` squeeze on the button itself (squeeze to near-zero width, swap content, un-squeeze), skipped entirely under `prefers-reduced-motion: reduce` (content swaps instantly with no transform). Each card now has **one** content region instead of two stacked front/back nodes — content is replaced directly via `innerHTML`, so there's no `aria-hidden` synchronization to maintain and nothing for the 3D-transform tab-order bug to attach to structurally, regardless of whether the original diagnosis is exactly right. This is a strictly simpler design on every axis (DOM, JS, AT story), not just a workaround.
+
+**Verified:** `node --check` clean; HTML tag-balance clean; CSS brace count unchanged at 213/213 (net-neutral edit); no leftover references to the removed 3D properties outside of explanatory comments; all 4 new ids (`cd-btn-a`, `cd-face-a`, `cd-btn-b`, `cd-face-b`) present exactly once.
+
+**Still open:** re-test with Safari + VoiceOver to confirm Tab now reaches both cards — this fix is based on eliminating the suspect CSS category, not on reproducing and re-testing the original bug in this sandbox.
