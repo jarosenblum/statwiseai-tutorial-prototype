@@ -125,4 +125,4 @@ Follow-up report: Module 3's "Why the stronger example works" card (`.frag-toggl
 
 **Verified:** `node --check` clean on `module3.js`; HTML tag-balance clean; `data-pa-live` present exactly twice in module-03 (frag card + prompt-anatomy card), zero in the wrong place.
 
-**Still open:** re-test with Safari + VoiceOver.
+**Confirmed fixed** by user live-testing with Safari + VoiceOver (2026-07-20) — the flip-card tab order, the `.pa-toggle` disclosure announcement (mod 2 + mod 3), and the `.frag-toggle` fragment announcement (mod 3) are all verified working in a real AT, not just by static code inspection.
