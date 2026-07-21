@@ -62,6 +62,16 @@
       btn.setAttribute('aria-expanded', String(!expanded));
       btn.textContent = expanded ? 'Show in prompt' : 'Hide';
       pop.hidden = expanded;
+
+      // Same fix as the shared .pa-toggle pattern in app.js: toggling
+      // `hidden` on an already-present, unchanged text node is not a
+      // reliable aria-live trigger, so the revealed fragment text is
+      // force-announced via a persistent live region instead. The
+      // button's own label change ("Hide") is what was already being
+      // announced -- the fragment text itself was not.
+      var card = btn.closest('.card');
+      var live = card && card.querySelector('[data-pa-live]');
+      if (live) live.textContent = expanded ? '' : pop.textContent.trim();
     });
   });
 })();

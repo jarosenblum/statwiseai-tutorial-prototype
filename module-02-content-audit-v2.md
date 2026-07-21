@@ -114,3 +114,15 @@ One `<p class="sr-only" data-pa-live aria-live="polite"></p>` element added to e
 **Verified:** `node --check` clean on `app.js`; HTML tag-balance clean on both module-02 and module-03; CSS brace count 214/214 (up from 213, one new rule accounted for); `data-pa-live` present exactly once per page.
 
 **Still open:** re-test with Safari + VoiceOver to confirm the expanded panel text is now announced on both modules.
+
+---
+
+## Frag-toggle VoiceOver announcement fix — Module 3 only, same day
+
+Follow-up report: Module 3's "Why the stronger example works" card (`.frag-toggle`/`.frag-pop`, "Show in prompt" buttons) has the identical symptom — the button's own label change ("Hide") is announced, but the revealed fragment text is not. Same root cause as the `.pa-toggle` fix above, but this is a **separate, older implementation** living in `assets/module3.js` (not the shared `app.js` disclosure handler), so it needed its own fix rather than being covered by the earlier commit.
+
+**Fix:** identical technique — the `.frag-toggle` click handler now writes the revealed `.frag-pop` text into a persistent `[data-pa-live]` live region on expand, scoped to the nearest `.card`. One new `<p class="sr-only" data-pa-live aria-live="polite"></p>` added to the "Why the stronger example works" card (module-03 now has two such regions, one per card, each correctly scoped by `closest('.card')` — verified they don't cross-talk).
+
+**Verified:** `node --check` clean on `module3.js`; HTML tag-balance clean; `data-pa-live` present exactly twice in module-03 (frag card + prompt-anatomy card), zero in the wrong place.
+
+**Still open:** re-test with Safari + VoiceOver.
