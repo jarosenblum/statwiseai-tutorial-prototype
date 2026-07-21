@@ -248,6 +248,23 @@ main.content { min-width: 0; }
 .checklist label { cursor: pointer; }
 .checklist li.checked label { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: var(--line-strong); }
 
+/* ---------- Quick self-check: function-select quiz (Module 2) ---------- */
+.fn-select-list { list-style: none; margin: 0; padding: 0; }
+.fn-select-list li { padding: .6em .7em; border-bottom: 1px solid var(--line); border-radius: var(--radius-sm); }
+.fn-select-list li:last-child { border-bottom: none; }
+.fn-row { display: flex; align-items: flex-start; gap: .7em; }
+.fn-select-list input[type=checkbox] {
+  margin-top: .2em; width: 18px; height: 18px; accent-color: var(--ut-orange); flex-shrink: 0;
+}
+.fn-select-list label { cursor: pointer; }
+.fn-result { margin: .35em 0 0 2.1em; font-size: .82rem; font-weight: 600; min-height: 1em; }
+.fn-select-list li.fn-right { background: var(--success-tint); }
+.fn-select-list li.fn-right .fn-result { color: var(--success); }
+.fn-select-list li.fn-wrong { background: #FBEAE8; }
+.fn-select-list li.fn-wrong .fn-result { color: #A3332B; }
+#fn-feedback { font-weight: 700; margin: .8em 0 0; }
+#self-check-confirm { margin-top: 1.4em; padding-top: 1.2em; border-top: 1px solid var(--line); }
+
 /* ---------- Prompt anatomy diagram (recommended prompt structure) ---------- */
 .prompt-anatomy {
   display: grid;

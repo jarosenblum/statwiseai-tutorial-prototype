@@ -293,17 +293,60 @@
       </div>
     </div>
 
-    <div class="card" data-checklist>
+    <div class="card">
       <h2>Quick self-check</h2>
-      <p class="small">Confirm each item before moving to the next module.</p>
-      <ul class="checklist">
-        <li><input type="checkbox" id="sc1"><label for="sc1">I understand what StatWiseAI can help with</label></li>
-        <li><input type="checkbox" id="sc2"><label for="sc2">I understand that AI-generated answers can be wrong</label></li>
-        <li><input type="checkbox" id="sc3"><label for="sc3">I know that I remain responsible for final research decisions</label></li>
-        <li><input type="checkbox" id="sc4"><label for="sc4">I know not to enter sensitive, proprietary, PHI, HIPAA-, or FERPA-regulated information</label></li>
-      </ul>
-      <div class="progress-track"><div class="progress-fill"></div></div>
-      <div class="progress-label">0 of 4 confirmed (0%)</div>
+      <p class="small">First, test yourself on what StatWiseAI can actually help with. Then confirm you're ready to move on.</p>
+
+      <fieldset class="pb-field">
+        <legend>Select every task StatWiseAI can actually help with</legend>
+        <ul class="fn-select-list">
+          <li data-correct="true">
+            <div class="fn-row"><input type="checkbox" id="fn1"><label for="fn1">Clarifying a research question</label></div>
+            <p class="fn-result"></p>
+          </li>
+          <li data-correct="true">
+            <div class="fn-row"><input type="checkbox" id="fn2"><label for="fn2">Drafting an analysis plan</label></div>
+            <p class="fn-result"></p>
+          </li>
+          <li data-correct="true">
+            <div class="fn-row"><input type="checkbox" id="fn3"><label for="fn3">Generating code in R, Python, SAS, Stata, or SPSS</label></div>
+            <p class="fn-result"></p>
+          </li>
+          <li data-correct="true">
+            <div class="fn-row"><input type="checkbox" id="fn4"><label for="fn4">Reviewing statistical output</label></div>
+            <p class="fn-result"></p>
+          </li>
+          <li data-correct="true">
+            <div class="fn-row"><input type="checkbox" id="fn5"><label for="fn5">Identifying assumptions and limitations</label></div>
+            <p class="fn-result"></p>
+          </li>
+          <li data-correct="false">
+            <div class="fn-row"><input type="checkbox" id="fn6"><label for="fn6">Making final analytic decisions without human review</label></div>
+            <p class="fn-result"></p>
+          </li>
+          <li data-correct="false">
+            <div class="fn-row"><input type="checkbox" id="fn7"><label for="fn7">Determining IRB, HIPAA, FERPA, or data-use compliance</label></div>
+            <p class="fn-result"></p>
+          </li>
+          <li data-correct="false">
+            <div class="fn-row"><input type="checkbox" id="fn8"><label for="fn8">Guaranteeing that a statistical method is appropriate</label></div>
+            <p class="fn-result"></p>
+          </li>
+        </ul>
+      </fieldset>
+      <button type="button" class="btn" id="fn-check-btn">Check my answers</button>
+      <p id="fn-feedback" aria-live="polite"></p>
+
+      <div id="self-check-confirm" data-checklist hidden>
+        <p class="small" style="font-weight:700;">Now confirm the following before moving on:</p>
+        <ul class="checklist">
+          <li><input type="checkbox" id="sc2"><label for="sc2">I understand that AI-generated answers can be wrong</label></li>
+          <li><input type="checkbox" id="sc3"><label for="sc3">I know that I remain responsible for final research decisions</label></li>
+          <li><input type="checkbox" id="sc4"><label for="sc4">I know not to enter sensitive, proprietary, PHI, HIPAA-, or FERPA-regulated information</label></li>
+        </ul>
+        <div class="progress-track"><div class="progress-fill"></div></div>
+        <div class="progress-label">0 of 3 confirmed (0%)</div>
+      </div>
     </div>
 
   </main>
@@ -318,5 +361,6 @@
 </footer>
 
 <script src="assets/app.js"></script>
+<script src="assets/module2.js"></script>
 </body>
 </html>

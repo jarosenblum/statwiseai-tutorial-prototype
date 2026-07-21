@@ -53,3 +53,18 @@ Rows 3, 4, 5, and 6 (generative AI definition, LLM definition, can/can't-help li
 **Engineering note:** the `.pa-toggle` disclosure handler was promoted from `module3.js` (where it was module-specific) into the shared `app.js`, since it's now used by both Module 2 and Module 3. No new interaction primitive was invented — Tier C's entire engineering cost was reusing an existing pattern in a new location plus writing 18 items of quiz content.
 
 **Verified:** tag balance clean on all 4 pages; `aria-controls`/`id` cross-check clean (18 pairs on Module 2, 15 still on Module 3, zero orphaned either place); CSS brace-balanced; `node --check` clean on all 3 JS files; zero remaining `<h4>` anywhere in the site.
+
+---
+
+## Quick self-check redesign — same day
+
+Row 8 ("Quick self-check") was refined per explicit user request: the widget was confirmatory-only (4 self-report checkboxes with no actual recall/recognition check). Reworked into two stages:
+
+- **Stage 1 (new):** a function-select quiz — `<fieldset>`/`<legend>` with 8 checkboxes ("Select every task StatWiseAI can actually help with"), 5 true items + 3 distractors, all wording reused verbatim from the Block 3 phase-grouped quiz already built and audited (no new claims introduced — direct reuse of vetted content, not fresh interpretation). A "Check my answers" button scores the selections, marks each item right/wrong with text + color (not color alone), disables the inputs, and reports a summary count in an `aria-live="polite"` region.
+- **Stage 2 (former items 2–4):** the original 3 confirmatory checkboxes, now wrapped in `#self-check-confirm` and hidden by default. Revealed (via `hidden = false`) only after Stage 1 is checked. Item 1 ("I understand what StatWiseAI can help with") was removed as a self-report item since Stage 1 now tests that understanding directly rather than asking the user to self-certify it.
+
+**Engineering note:** new file `assets/module2.js` (module-2-specific gating logic — first JS this module has needed). The existing `.checklist`/`data-checklist` progress-bar logic in `app.js` (`initChecklists()`) was reused unmodified for Stage 2 — it queries `[data-checklist]` blocks at `DOMContentLoaded` regardless of the `hidden` attribute, so the 3-item progress bar wires up correctly at load and just becomes visible later. No changes to shared `app.js` were needed. New CSS colors reuse existing audited pairs verbatim (`--success`/`--success-tint` for correct, `#A3332B`/`#FBEAE8` for incorrect — same hex pair as `.card-warn`, previously computed at 6.85:1).
+
+**Verified:** `node --check` clean on `module2.js`; HTML tag-balance clean (Python `HTMLParser` stack check); all 11 new/retained ids (`fn1`–`fn8`, `sc2`–`sc4`) have exactly one matching `label[for]`; `sc1` fully removed; data-correct counts confirm 5 true / 3 false; CSS brace count 194/194 (up from 181, all additions accounted for); no `aria-controls` added (this is a one-way reveal, not a toggle, so `aria-live` + natural DOM order was used instead of the `aria-expanded` disclosure pattern — architecturally distinct from the Block 3 pattern by design).
+
+**Still open:** live-browser/screen-reader verification (same standing caveat as every other build this session). No client sign-off yet on this specific refinement.
