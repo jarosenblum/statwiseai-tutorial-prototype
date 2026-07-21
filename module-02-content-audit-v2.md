@@ -68,3 +68,19 @@ Row 8 ("Quick self-check") was refined per explicit user request: the widget was
 **Verified:** `node --check` clean on `module2.js`; HTML tag-balance clean (Python `HTMLParser` stack check); all 11 new/retained ids (`fn1`–`fn8`, `sc2`–`sc4`) have exactly one matching `label[for]`; `sc1` fully removed; data-correct counts confirm 5 true / 3 false; CSS brace count 194/194 (up from 181, all additions accounted for); no `aria-controls` added (this is a one-way reveal, not a toggle, so `aria-live` + natural DOM order was used instead of the `aria-expanded` disclosure pattern — architecturally distinct from the Block 3 pattern by design).
 
 **Still open:** live-browser/screen-reader verification (same standing caveat as every other build this session). No client sign-off yet on this specific refinement.
+
+---
+
+## "Confident doesn't mean correct" flip-card demo — same day
+
+Added per `module-02-instructional-design-assessment.md` recommendation #4 (the module's central risk claim — AI can sound confident while wrong — was asserted three times but never demonstrated). New card `#confidence-demo`, placed between the definition grid and the 18-item quiz, does not replace the existing abstract risk tag in the "What is generative AI?" card — added alongside it per the minimal-change default; removing/consolidating the abstract tag was not authorized separately.
+
+Three example pairs (missing data / p-value interpretation / odds ratio), each a constructed confident-right vs. confident-wrong AI response pair — **interpretive/constructed content, not sourced from the source tutorial text**, flagged per usual practice. User clicks one of two response cards; both flip (per sign-off: reveal-both, not reveal-clicked-only) to show verdict + rationale; cycles through all 3 via a "Next example" button.
+
+**Accessibility resolution for the flip (confirmed before building, not asserted after):** `backface-visibility: hidden` is a paint-only CSS property — it does not remove content from the accessibility tree, so a naive two-face flip card can cause screen readers to announce both faces regardless of visual rotation (confirmed via web search, general CSS-accessibility guidance, not tied to a single WCAG success criterion). Resolution used here: the visual flip is a CSS 3D transform (`rotateY`, disabled under `prefers-reduced-motion: reduce`); AT exposure is controlled independently via `aria-hidden`, toggled on each face the instant a choice is made, synced to but not dependent on the animation. Choices are real `<button>` elements (keyboard-operable by default). Verdict is conveyed by text ("Confident and right." / "Confident, but wrong.") plus color, not color alone. Outcome and question-counter updates are in `aria-live="polite"` regions.
+
+**Engineering note:** appended to `assets/module2.js` (no new file). New CSS colors are direct reuse of already-audited pairs (`--success`/`--success-tint`; `#A3332B`/`#FBEAE8`, same as `.card-warn`, previously computed at 6.85:1) — no new contrast computation required.
+
+**Verified:** `node --check` clean; HTML tag-balance clean; all 12 new ids present exactly once and match JS references; CSS brace count 213/213 (up from 194, additions accounted for).
+
+**Still open:** live-browser/screen-reader verification of the actual flip behavior (same standing caveat — no headless/real browser in this sandbox, so the `aria-hidden` sync is verified by code inspection, not by testing with an actual screen reader). No client sign-off yet.

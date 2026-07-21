@@ -265,6 +265,38 @@ main.content { min-width: 0; }
 #fn-feedback { font-weight: 700; margin: .8em 0 0; }
 #self-check-confirm { margin-top: 1.4em; padding-top: 1.2em; border-top: 1px solid var(--line); }
 
+/* ---------- Confidence demo: flip-card widget (Module 2) ---------- */
+.cd-counter { font-size: .8rem; color: var(--ink-soft); font-weight: 700; margin: 0; }
+.cd-prompt { font-weight: 700; margin: .3em 0 0; }
+.cd-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; margin: 1em 0; }
+@media (max-width: 720px) { .cd-pair { grid-template-columns: 1fr; } }
+.cd-card { perspective: 1200px; }
+.cd-choice {
+  position: relative; display: block; width: 100%; min-height: 12em;
+  border: 1.5px solid var(--line-strong); border-radius: var(--radius);
+  background: transparent; cursor: pointer; padding: 0; font-family: var(--font);
+  transform-style: preserve-3d; transition: transform .5s ease;
+}
+.cd-choice.flipped { transform: rotateY(180deg); }
+.cd-choice:disabled { cursor: default; }
+.cd-choice:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.cd-face {
+  position: absolute; inset: 0; backface-visibility: hidden;
+  border-radius: var(--radius); padding: 1em 1.1em; text-align: left;
+  display: flex; flex-direction: column; gap: .5em; background: var(--paper);
+  overflow: auto;
+}
+.cd-face-front { font-size: .92rem; color: var(--ink); }
+.cd-face-back { transform: rotateY(180deg); font-size: .88rem; font-weight: 600; justify-content: center; }
+.cd-choice.cd-right .cd-face-back { background: var(--success-tint); color: var(--success); }
+.cd-choice.cd-wrong .cd-face-back { background: #FBEAE8; color: #A3332B; }
+.cd-label { display: block; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+.cd-feedback { font-weight: 700; margin: .8em 0; min-height: 1.2em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-choice { transition: none; }
+}
+
 /* ---------- Prompt anatomy diagram (recommended prompt structure) ---------- */
 .prompt-anatomy {
   display: grid;

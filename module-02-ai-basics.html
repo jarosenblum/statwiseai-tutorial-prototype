@@ -117,6 +117,34 @@
       </div>
     </div>
 
+    <div class="card" id="confidence-demo">
+      <h2>Confident doesn't mean correct</h2>
+      <p class="small">AI can sound equally sure of itself whether it's right or wrong. For each example, pick the response that's both confident <em>and</em> right.</p>
+
+      <div id="cd-status" aria-live="polite">
+        <p class="cd-counter">Example <span id="cd-index">1</span> of 3</p>
+        <p class="cd-prompt" id="cd-question"></p>
+      </div>
+
+      <div class="cd-pair">
+        <div class="cd-card">
+          <button type="button" class="cd-choice" id="cd-btn-a">
+            <span class="cd-face cd-face-front" id="cd-front-a"></span>
+            <span class="cd-face cd-face-back" id="cd-back-a" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="cd-card">
+          <button type="button" class="cd-choice" id="cd-btn-b">
+            <span class="cd-face cd-face-front" id="cd-front-b"></span>
+            <span class="cd-face cd-face-back" id="cd-back-b" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <p id="cd-feedback" aria-live="polite" class="cd-feedback"></p>
+      <button type="button" class="btn btn-quiet" id="cd-next-btn">Next example</button>
+    </div>
+
     <div class="card">
       <h2>Which of these can AI help with?</h2>
       <p class="small">For each item, decide: could StatWiseAI reasonably help with this, or not? Click to check your thinking. Grouped by where each task typically falls in a research project.</p>
