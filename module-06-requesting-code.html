@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 6 · Requesting Code in R, Python, SAS, Stata, or SPSS — StatWiseAI Tutorial (Prototype)</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="brand-strip">
+<span>Center for Healthcare Innovation and Technology Advancements | School of Nursing</span>
+<span>PROTOTYPE — not affiliated with live UT Sites deployment</span>
+</div>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-title" href="index.html">
+<span class="mark">SW</span>
+<span class="site-title-text">
+<strong>StatWiseAI Tutorial</strong>
+<span>AI Literacy Learning Path</span>
+</span>
+</a>
+<div class="header-actions">
+<span class="pill-badge">Module 6 of 9</span>
+</div>
+</div>
+</header>
+<div class="shell">
+<nav class="path-nav" aria-label="Tutorial module path">
+<h2>Learning path</h2>
+<ol>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-01-responsible-use.html">1. Start Here: Responsible Use</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-02-ai-basics.html">2. AI Basics for Researchers</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-03-prompting.html">3. Prompting for Data Analysis</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-04-documentation.html">4. Working with Dataset Documentation</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-05-reviewing-outputs.html">5. Reviewing AI Outputs</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="active"><span class="step-dot" aria-hidden="true">6</span><span class="step-body"><a class="step-label" href="module-06-requesting-code.html">6. Requesting Code</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">7</span><span class="step-body"><span class="step-label">7. Reproducibility &amp; Prompt History</span><span class="tag tag-planned">Planned</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">8</span><span class="step-body"><span class="step-label">8. Practice: HRS &amp; NHANES</span><span class="tag tag-planned">Planned</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">9</span><span class="step-body"><span class="step-label">9. Templates &amp; Checklists</span><span class="tag tag-planned">Planned</span></span></li>
+</ol>
+</nav>
+<main class="content" id="main" tabindex="-1">
+<div class="page-head">
+<span class="eyebrow">Module 6 of 9</span>
+<h1>Requesting Code in R, Python, SAS, Stata, or SPSS</h1>
+<p class="lede">StatWiseAI can draft code in five languages — but every line it produces is a starting point, not a finished analysis.</p>
+<p>Choose the language that fits your project, training, data environment, and team workflow. AI-generated code should always be treated as a draft: you're responsible for reviewing, testing, revising, and documenting any code before using it in an actual analysis.</p>
+</div>
+
+<div class="card">
+<h2>What to include in a code request</h2>
+<p class="small">A strong code request covers all nine of these. Tap any item for what it means — most map directly onto a field in the builder further down the page.</p>
+<p class="sr-only" data-pa-live aria-live="polite"></p>
+<div class="prompt-anatomy">
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-language">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Preferred software language</span>
+</button>
+<div class="pa-pop" id="m6-pop-language" hidden>
+<p>Tell StatWiseAI which language to draft in.</p>
+<p class="small" style="margin:0;"><em>R, Python, SAS, Stata, or SPSS. Matches the language field in the builder below.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-goal">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">The analysis goal</span>
+</button>
+<div class="pa-pop" id="m6-pop-goal" hidden>
+<p>Describe what you're trying to accomplish.</p>
+<p class="small" style="margin:0;"><em>Example: "Run a survey-weighted logistic regression to estimate whether X is associated with Y." Matches the goal field below.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-outcome">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">The type of outcome</span>
+</button>
+<div class="pa-pop" id="m6-pop-outcome" hidden>
+<p>Continuous, binary, count, time-to-event, repeated measure, or other.</p>
+<p class="small" style="margin:0;"><em>Matches the outcome-type field below.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-model">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">The general model or analysis type</span>
+</button>
+<div class="pa-pop" id="m6-pop-model" hidden>
+<p>Name the specific model if you already know it — for example, logistic regression, linear mixed model, or Cox proportional hazards.</p>
+<p class="small" style="margin:0;"><em>The builder below doesn't have a separate blank for this — fold it into your description of the goal.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-placeholders">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Placeholder variable names</span>
+</button>
+<div class="pa-pop" id="m6-pop-placeholders" hidden>
+<p>Use generic names like OUTCOME, EXPOSURE, AGE, or COVARIATE_1 instead of your real variable names.</p>
+<p class="small" style="margin:0;"><em>The builder below always includes this as a fixed line — StatWiseAI never needs your real variable names to draft code.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-design">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Design features</span>
+</button>
+<div class="pa-pop" id="m6-pop-design" hidden>
+<p>Survey weights, strata, PSUs, clusters, or repeated measures.</p>
+<p class="small" style="margin:0;"><em>Matches the checkbox list below.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-missing">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">How missing data should be handled</span>
+</button>
+<div class="pa-pop" id="m6-pop-missing" hidden>
+<p>Say how missing data should be handled or flagged.</p>
+<p class="small" style="margin:0;"><em>"Missing data" is one of the checkboxes below, but add anything more specific to your goal or covariates description.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-output">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">The desired output</span>
+</button>
+<div class="pa-pop" id="m6-pop-output" hidden>
+<p>What output do you want — a fitted model summary, diagnostic plots, a formatted table?</p>
+<p class="small" style="margin:0;"><em>The builder below doesn't include a blank for this either — add a line stating it if it matters for your request.</em></p>
+</div>
+</div>
+
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="m6-pop-comments">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">A request for comments explaining the code</span>
+</button>
+<div class="pa-pop" id="m6-pop-comments" hidden>
+<p>Ask for commented code, plus notes on assumptions, diagnostics, and what to verify before running it.</p>
+<p class="small" style="margin:0;"><em>The builder below always appends this as its closing line.</em></p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Use placeholder variable names</h2>
+<p>When requesting code, avoid entering sensitive or restricted data values. In many cases, you can use placeholder names instead.</p>
+<blockquote>&ldquo;Please draft R code for a survey-weighted logistic regression using placeholder variable names. Use OUTCOME for the binary outcome, EXPOSURE for the main predictor, AGE, SEX, RACE_ETHNICITY, and INCOME for covariates, WEIGHT for the survey weight, STRATA for strata, and PSU for the primary sampling unit. Include comments explaining what each placeholder should be replaced with.&rdquo;</blockquote>
+</div>
+
+<div class="card">
+<h2>Build your own code request</h2>
+<p class="small">Fill in what you know. Anything left blank stays as a placeholder so you can see the full template shape.</p>
+<form id="rq-form" class="pb-form" onsubmit="return false;">
+<div class="grid-2">
+<div class="pb-field">
+<label for="rq-language">Preferred language</label>
+<select id="rq-language">
+<option value="">— select —</option>
+<option>R</option>
+<option>Python</option>
+<option>SAS</option>
+<option>Stata</option>
+<option>SPSS</option>
+</select>
+</div>
+<div class="pb-field">
+<label for="rq-outcome">Outcome type</label>
+<select id="rq-outcome">
+<option value="">— select —</option>
+<option>continuous</option>
+<option>binary</option>
+<option>count</option>
+<option>time-to-event</option>
+<option>repeated measure</option>
+<option>other</option>
+</select>
+</div>
+</div>
+
+<div class="pb-field">
+<label for="rq-goal">Analysis goal</label>
+<textarea id="rq-goal" placeholder="e.g., Run a survey-weighted logistic regression to estimate whether food insecurity is associated with depressive symptoms"></textarea>
+</div>
+
+<div class="grid-2">
+<div class="pb-field">
+<label for="rq-predictor">Main predictor</label>
+<input type="text" id="rq-predictor" placeholder="e.g., food insecurity status">
+</div>
+<div class="pb-field">
+<label for="rq-covariates">Covariates</label>
+<input type="text" id="rq-covariates" placeholder="e.g., age, sex, race/ethnicity, income">
+</div>
+</div>
+
+<fieldset class="pb-field">
+<legend>Design features</legend>
+<div class="pb-checks">
+<label><input type="checkbox" name="rqfeatures" value="survey weights"> survey weights</label>
+<label><input type="checkbox" name="rqfeatures" value="strata"> strata</label>
+<label><input type="checkbox" name="rqfeatures" value="PSU"> PSU</label>
+<label><input type="checkbox" name="rqfeatures" value="clustering"> clustering</label>
+<label><input type="checkbox" name="rqfeatures" value="repeated measures"> repeated measures</label>
+<label><input type="checkbox" name="rqfeatures" value="longitudinal waves"> longitudinal waves</label>
+<label><input type="checkbox" name="rqfeatures" value="missing data"> missing data</label>
+</div>
+</fieldset>
+</form>
+</div>
+
+<div class="card">
+<div class="pb-output-head">
+<h2 style="margin:0;">Your code request</h2>
+<button type="button" class="btn" data-copy-target="#rq-output-text">Copy</button>
+</div>
+<div class="pb-output" id="rq-output-text"></div>
+<p class="small" style="margin-top:.8em;">Paste this into StatWiseAI, then review everything it returns against the checklist below before you use it.</p>
+</div>
+
+<div class="card">
+<h2>Language-specific examples</h2>
+<p class="small">Five worked requests, one per supported language, each applying the template above. Tap a language to see the full request text.</p>
+<p class="sr-only" data-pa-live aria-live="polite"></p>
+<div class="check-grid">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="lang-pop-r">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">R (NHANES-style)</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="lang-pop-python">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Python</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="lang-pop-sas">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">SAS</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="lang-pop-stata">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Stata</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="lang-pop-spss">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">SPSS</span>
+</button>
+<div class="pa-pop" id="lang-pop-r" hidden>
+<p><strong>R — NHANES-style survey design</strong></p>
+<div class="pb-output">Please draft R code for a survey-weighted logistic regression using NHANES-style design variables. Use placeholder names: OUTCOME, EXPOSURE, AGE, SEX, RACE_ETHNICITY, INCOME, WTMEC2YR, SDMVSTRA, and SDMVPSU. Include comments explaining how to replace the placeholders. Also include a reminder to verify the correct weight for the variables used and whether survey cycles need to be combined.</div>
+</div>
+<div class="pa-pop" id="lang-pop-python" hidden>
+<p><strong>Python</strong></p>
+<div class="pb-output">Please draft Python code using pandas and statsmodels for a regression analysis with placeholder variable names. Include comments explaining the data checks, model specification, and output interpretation. Do not assume the data are already clean.</div>
+</div>
+<div class="pa-pop" id="lang-pop-sas" hidden>
+<p><strong>SAS</strong></p>
+<div class="pb-output">Please draft SAS code for a survey-weighted logistic regression using placeholder variable names. Use PROC SURVEYLOGISTIC. Include placeholders for the outcome, exposure, covariates, strata, cluster/PSU, and weight. Add comments explaining what the user should verify in the documentation before running the code.</div>
+</div>
+<div class="pa-pop" id="lang-pop-stata" hidden>
+<p><strong>Stata</strong></p>
+<div class="pb-output">Please draft Stata code for a survey-weighted regression using placeholder names. Use OUTCOME as the outcome, EXPOSURE as the main predictor, AGE, SEX, and EDUCATION as covariates, WEIGHT as the sampling weight, STRATA as the strata variable, and PSU as the primary sampling unit. Include svyset syntax and comments explaining what the user should verify before running the code.</div>
+</div>
+<div class="pa-pop" id="lang-pop-spss" hidden>
+<p><strong>SPSS</strong></p>
+<div class="pb-output">Please draft SPSS syntax for a regression analysis using placeholder variable names. Include comments that explain what should be replaced, how missing values should be checked, and what output should be reviewed before interpretation.</div>
+</div>
+</div>
+</div>
+
+<div class="card" data-checklist>
+<h2>Code review checklist</h2>
+<p class="small">Before using AI-generated code, confirm each item below — from simple substitution checks, to how the code handles your data, to whether the finished result actually holds up.</p>
+<div class="checklist-group">
+<h3>Variable &amp; placeholder matches</h3>
+<ul class="checklist">
+<li><input type="checkbox" id="cr2"><label for="cr2">Are all variable names correct?</label></li>
+<li><input type="checkbox" id="cr3"><label for="cr3">Are placeholder names replaced correctly?</label></li>
+</ul>
+</div>
+<div class="checklist-group">
+<h3>Data handling &amp; analytic setup</h3>
+<ul class="checklist">
+<li><input type="checkbox" id="cr4"><label for="cr4">Are missing values handled appropriately?</label></li>
+<li><input type="checkbox" id="cr5"><label for="cr5">Are survey weights, strata, PSUs, clusters, or repeated measures handled correctly?</label></li>
+<li><input type="checkbox" id="cr6"><label for="cr6">Does the code use the correct analytic sample?</label></li>
+<li><input type="checkbox" id="cr7"><label for="cr7">Does the code create or recode variables correctly?</label></li>
+<li><input type="checkbox" id="cr8"><label for="cr8">Does the model match the outcome type?</label></li>
+</ul>
+</div>
+<div class="checklist-group">
+<h3>Results &amp; process verification</h3>
+<ul class="checklist">
+<li><input type="checkbox" id="cr1"><label for="cr1">Does the code match the intended analysis?</label></li>
+<li><input type="checkbox" id="cr9"><label for="cr9">Does the output support the interpretation?</label></li>
+<li><input type="checkbox" id="cr10"><label for="cr10">Has the code been tested on simulated or approved data?</label></li>
+<li><input type="checkbox" id="cr11"><label for="cr11">Has the final code been saved and documented?</label></li>
+</ul>
+</div>
+<div class="progress-track"><div class="progress-fill"></div></div>
+<div class="progress-label">0 of 11 confirmed (0%)</div>
+</div>
+
+<div class="card card-warn">
+<h2>Important reminder</h2>
+<p style="margin-bottom:0;">StatWiseAI can help draft code, but it cannot guarantee that the code is correct for a specific dataset or research question. Users should review code carefully and consult a statistician or data analyst when needed.</p>
+</div>
+
+</main>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div><strong style="color:#fff;">CHITA · School of Nursing</strong><br>1710 Red River Street, Austin, Texas 78712<br><a href="mailto:chita@utexas.edu">chita@utexas.edu</a></div>
+<div><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/requesting-code-in-r-python-sas-stata-or-spss/">Source tutorial page (live UT Sites)</a></div>
+<div class="fine">Design prototype only. Not the production UT Sites deployment.</div>
+</div>
+</footer>
+<script src="assets/app.js"></script>
+<script src="assets/module6.js"></script>
+</body>
+</html>

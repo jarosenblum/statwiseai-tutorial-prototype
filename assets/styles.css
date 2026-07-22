@@ -610,6 +610,14 @@ fieldset.pb-field { border: 0; margin: 0; padding: 0; }
    the .pa-toggle/.pa-pop disclosure treatment above) -- left in place rather
    than pruned, since removing CSS isn't this pass's call to make. */
 
+/* ---------- Categorized checklist groups (module 6 code review checklist) ---------- */
+/* Same spacing values as .rf-quiz/.rf-quiz:first-of-type -- .checklist itself
+   zeroes its own margin, and h3 has no top margin, so consecutive category
+   groups would otherwise sit flush against each other with no visual break. */
+.checklist-group { margin-top: 1.6em; }
+.checklist-group:first-of-type { margin-top: .4em; }
+.checklist-group h3 { margin-bottom: .4em; }
+
 /* ---------- Module grid on home ---------- */
 .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1em; }
 @media (max-width: 980px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
