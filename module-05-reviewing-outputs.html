@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 5 · Reviewing AI Outputs — StatWiseAI Tutorial (Prototype)</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="brand-strip">
+<span>Center for Healthcare Innovation and Technology Advancements | School of Nursing</span>
+<span>PROTOTYPE — not affiliated with live UT Sites deployment</span>
+</div>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-title" href="index.html">
+<span class="mark">SW</span>
+<span class="site-title-text">
+<strong>StatWiseAI Tutorial</strong>
+<span>AI Literacy Learning Path</span>
+</span>
+</a>
+<div class="header-actions">
+<span class="pill-badge">Module 5 of 9</span>
+</div>
+</div>
+</header>
+<div class="shell">
+<nav class="path-nav" aria-label="Tutorial module path">
+<h2>Learning path</h2>
+<ol>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-01-responsible-use.html">1. Start Here: Responsible Use</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-02-ai-basics.html">2. AI Basics for Researchers</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-03-prompting.html">3. Prompting for Data Analysis</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-04-documentation.html">4. Working with Dataset Documentation</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="active"><span class="step-dot" aria-hidden="true">5</span><span class="step-body"><a class="step-label" href="module-05-reviewing-outputs.html">5. Reviewing AI Outputs</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">6</span><span class="step-body"><span class="step-label">6. Requesting Code</span><span class="tag tag-planned">Planned</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">7</span><span class="step-body"><span class="step-label">7. Reproducibility &amp; Prompt History</span><span class="tag tag-planned">Planned</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">8</span><span class="step-body"><span class="step-label">8. Practice: HRS &amp; NHANES</span><span class="tag tag-planned">Planned</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">9</span><span class="step-body"><span class="step-label">9. Templates &amp; Checklists</span><span class="tag tag-planned">Planned</span></span></li>
+</ol>
+</nav>
+<main class="content" id="main" tabindex="-1">
+<div class="page-head">
+<span class="eyebrow">Module 5 of 9</span>
+<h1>Reviewing AI Outputs</h1>
+<p class="lede">A confident, well-organized response is not the same thing as a correct one. The CHECK framework gives you five specific things to verify before you rely on anything StatWiseAI produces.</p>
+<p>AI-generated responses can be useful, but they should always be reviewed critically. A response may be clear, organized, and confident while still being incomplete or inappropriate for the research question.</p>
+</div>
+
+<div class="card card-warn">
+<h2>Final responsibility</h2>
+<p style="margin-bottom:0;">Treat StatWiseAI output as a draft or suggestion, not a conclusion. The final decision remains with you and, when appropriate, a statistician, IRB, or data governance team.</p>
+</div>
+
+<div class="card">
+<h2>The CHECK framework</h2>
+<p class="small">Use the CHECK framework before relying on any AI-generated advice. Tap a letter for what to check and exactly what to ask.</p>
+<p class="sr-only" data-pa-live aria-live="polite"></p>
+<div class="check-grid">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="check-pop-c1">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">C — Context fit</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="check-pop-h">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">H — Hidden assumptions</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="check-pop-e">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">E — Evidence and standards</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="check-pop-c2">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">C — Code and computation</span>
+</button>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="check-pop-k">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">K — Knowledge limits</span>
+</button>
+<div class="pa-pop" id="check-pop-c1" hidden>
+<p><strong>C — Context fit</strong></p>
+<p>Does the response match the actual research question, population, dataset documentation, study design, and analytic goal?</p>
+<p style="margin-bottom:.3em;"><strong>Ask:</strong></p>
+<ul style="margin-bottom:0;">
+<li>Did StatWiseAI understand the outcome?</li>
+<li>Did it understand the main predictor or exposure?</li>
+<li>Did it account for the study design?</li>
+<li>Did it respond to the question I actually asked?</li>
+<li>Did it ignore any important detail?</li>
+</ul>
+</div>
+<div class="pa-pop" id="check-pop-h" hidden>
+<p><strong>H — Hidden assumptions</strong></p>
+<p>What assumptions did the AI make?</p>
+<p style="margin-bottom:.3em;"><strong>Ask:</strong></p>
+<ul style="margin-bottom:0;">
+<li>Did it assume the data are independent?</li>
+<li>Did it assume the outcome is continuous or binary?</li>
+<li>Did it assume a cross-sectional design when the data are longitudinal?</li>
+<li>Did it assume survey weights are unnecessary?</li>
+<li>Did it assume the goal is causal inference when the goal is prediction or description?</li>
+</ul>
+</div>
+<div class="pa-pop" id="check-pop-e" hidden>
+<p><strong>E — Evidence and standards</strong></p>
+<p>Is the response consistent with statistical principles, dataset documentation, and disciplinary standards?</p>
+<p style="margin-bottom:.3em;"><strong>Ask:</strong></p>
+<ul style="margin-bottom:0;">
+<li>Is the suggested method appropriate for the outcome?</li>
+<li>Is it appropriate for the design?</li>
+<li>Does it address missing data?</li>
+<li>Does it address measurement and coding?</li>
+<li>Does it distinguish association, prediction, and causation?</li>
+<li>Should a statistician or methodologist review this?</li>
+</ul>
+</div>
+<div class="pa-pop" id="check-pop-c2" hidden>
+<p><strong>C — Code and computation</strong></p>
+<p>If code was generated, does it run and does it do what it claims to do?</p>
+<p style="margin-bottom:.3em;"><strong>Ask:</strong></p>
+<ul style="margin-bottom:0;">
+<li>Are the variable names correct?</li>
+<li>Are placeholder names clearly marked?</li>
+<li>Are weights, strata, PSUs, clusters, or repeated measures handled correctly?</li>
+<li>Are missing values handled appropriately?</li>
+<li>Does the code match the intended model?</li>
+<li>Did the user test the code on simulated or approved data?</li>
+</ul>
+</div>
+<div class="pa-pop" id="check-pop-k" hidden>
+<p><strong>K — Knowledge limits</strong></p>
+<p>What does StatWiseAI not know?</p>
+<p style="margin-bottom:.3em;"><strong>Ask:</strong></p>
+<ul style="margin-bottom:0;">
+<li>Did I provide enough context?</li>
+<li>Did I leave out important design information?</li>
+<li>Is there information in the dataset documentation that StatWiseAI has not seen?</li>
+<li>Are there data-use restrictions, IRB requirements, or study-specific rules that StatWiseAI cannot determine?</li>
+<li>Should I verify this with a biostatistician, IRB, or data governance office?</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Spot the red flags</h2>
+<p class="small">Four situations, each based on a real way StatWiseAI's output can go wrong. For each one, select every option that's actually a red flag in that response — then check your answers.</p>
+
+<div class="rf-quiz" data-rf-quiz>
+<h3>Situation 1: a survey-data recommendation</h3>
+<p class="small">A response about a survey dataset on food insecurity and depressive symptoms recommends a standard logistic regression, with no mention of weighting or design.</p>
+<fieldset class="pb-field">
+<legend>Which of the following are red flags here? Select all that apply.</legend>
+<ul class="fn-select-list">
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf1-1"><label for="rf1-1">Ignores survey design</label></div><p class="fn-result"></p></li>
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf1-2"><label for="rf1-2">Ignores clustering or repeated measures</label></div><p class="fn-result"></p></li>
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf1-3"><label for="rf1-3">Does not explain assumptions</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf1-4"><label for="rf1-4">Uses language that could stigmatize a group</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf1-5"><label for="rf1-5">Provides code with variables that do not exist</label></div><p class="fn-result"></p></li>
+</ul>
+</fieldset>
+<button type="button" class="btn rf-check-btn">Check my answers</button>
+<p class="rf-feedback" aria-live="polite"></p>
+</div>
+
+<div class="rf-quiz" data-rf-quiz>
+<h3>Situation 2: a confident conclusion</h3>
+<p class="small">A response reviews preliminary output from an observational study, states that the predictor "causes" the outcome, and wraps up with a firm conclusion before the full results have been checked.</p>
+<fieldset class="pb-field">
+<legend>Which of the following are red flags here? Select all that apply.</legend>
+<ul class="fn-select-list">
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf2-1"><label for="rf2-1">Makes causal claims from observational data</label></div><p class="fn-result"></p></li>
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf2-2"><label for="rf2-2">Gives a final interpretation before results have been checked</label></div><p class="fn-result"></p></li>
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf2-3"><label for="rf2-3">Overgeneralizes from a specific sample</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf2-4"><label for="rf2-4">Ignores missing data</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf2-5"><label for="rf2-5">Gives one recommendation with no alternatives</label></div><p class="fn-result"></p></li>
+</ul>
+</fieldset>
+<button type="button" class="btn rf-check-btn">Check my answers</button>
+<p class="rf-feedback" aria-live="polite"></p>
+</div>
+
+<div class="rf-quiz" data-rf-quiz>
+<h3>Situation 3: code you can't trust yet</h3>
+<p class="small">A response includes code for the requested model. It references a couple of variable names that were never defined anywhere in the conversation, and the response doesn't flag this.</p>
+<fieldset class="pb-field">
+<legend>Which of the following are red flags here? Select all that apply.</legend>
+<ul class="fn-select-list">
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf3-1"><label for="rf3-1">Provides code with variables that do not exist</label></div><p class="fn-result"></p></li>
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf3-2"><label for="rf3-2">Does not mention limitations</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf3-3"><label for="rf3-3">Ignores survey design</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf3-4"><label for="rf3-4">Makes causal claims from observational data</label></div><p class="fn-result"></p></li>
+</ul>
+</fieldset>
+<button type="button" class="btn rf-check-btn">Check my answers</button>
+<p class="rf-feedback" aria-live="polite"></p>
+</div>
+
+<div class="rf-quiz" data-rf-quiz>
+<h3>Situation 4: one option, described carelessly</h3>
+<p class="small">A response gives a single recommended approach with no alternatives discussed, never asks whether any data are missing, and describes one subgroup in the sample using dismissive, generalizing language.</p>
+<fieldset class="pb-field">
+<legend>Which of the following are red flags here? Select all that apply.</legend>
+<ul class="fn-select-list">
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf4-1"><label for="rf4-1">Gives one recommendation with no alternatives</label></div><p class="fn-result"></p></li>
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf4-2"><label for="rf4-2">Ignores missing data</label></div><p class="fn-result"></p></li>
+<li data-correct="true"><div class="fn-row"><input type="checkbox" id="rf4-3"><label for="rf4-3">Uses language that could stigmatize a group</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf4-4"><label for="rf4-4">Overgeneralizes from a specific sample</label></div><p class="fn-result"></p></li>
+<li data-correct="false"><div class="fn-row"><input type="checkbox" id="rf4-5"><label for="rf4-5">Provides code with variables that do not exist</label></div><p class="fn-result"></p></li>
+</ul>
+</fieldset>
+<button type="button" class="btn rf-check-btn">Check my answers</button>
+<p class="rf-feedback" aria-live="polite"></p>
+</div>
+</div>
+
+<div class="card">
+<h2>Red flags at a glance</h2>
+<p class="small">All 11, in one place, for quick reference.</p>
+<table class="rf-table">
+<thead>
+<tr><th scope="col">Red flag</th><th scope="col">What it usually means</th></tr>
+</thead>
+<tbody>
+<tr><td>Gives one recommendation with no alternatives</td><td>No tradeoffs were laid out for you to weigh.</td></tr>
+<tr><td>Does not explain assumptions</td><td>You can't tell what the response is taking for granted.</td></tr>
+<tr><td>Ignores missing data</td><td>No plan for handling gaps in the data.</td></tr>
+<tr><td>Ignores survey design</td><td>Weights, strata, or PSUs go unmentioned.</td></tr>
+<tr><td>Ignores clustering or repeated measures</td><td>Treats non-independent data as if it were independent.</td></tr>
+<tr><td>Provides code with variables that do not exist</td><td>References names never defined anywhere in the conversation.</td></tr>
+<tr><td>Makes causal claims from observational data</td><td>States "causes" where the design can't support it.</td></tr>
+<tr><td>Gives a final interpretation before results have been checked</td><td>Concludes before the actual output has been reviewed.</td></tr>
+<tr><td>Overgeneralizes from a specific sample</td><td>Applies a finding beyond the population it was drawn from.</td></tr>
+<tr><td>Uses language that could stigmatize a group</td><td>Describes a subgroup in dismissive or generalizing terms.</td></tr>
+<tr><td>Does not mention limitations</td><td>No caveats, no "here's what this doesn't tell you."</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card">
+<h2>Red flags in practice</h2>
+<p class="small">Two worked examples. Click to see a weaker response next to what a stronger one asks instead.</p>
+<p class="sr-only" data-pa-live aria-live="polite"></p>
+<div class="pa-list">
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-flag-survey">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Example: survey data red flag (NHANES)</span>
+</button>
+<div class="pa-pop" id="pop-flag-survey" hidden>
+<p>A user asks:</p>
+<blockquote>&ldquo;I am using NHANES documentation to plan an analysis of food insecurity and depressive symptoms. What regression should I run?&rdquo;</blockquote>
+<div class="compare">
+<div class="col weak">
+<h3>Weaker response</h3>
+<blockquote>Recommends ordinary logistic or linear regression.</blockquote>
+<p class="small" style="margin:.6em 0 0;">Does not mention survey design at all.</p>
+</div>
+<div class="col strong">
+<h3>Stronger response</h3>
+<blockquote>Asks about survey weights, strata, PSUs, cycles, eligibility criteria, outcome coding, covariates, and whether the goal is estimating population-level associations.</blockquote>
+</div>
+</div>
+<p style="margin:.8em 0 0;">CDC's NHANES tutorial emphasizes that weights are used to account for complex survey design, nonresponse, and post-stratification, and are needed for estimates representative of the U.S. civilian noninstitutionalized population. Complex survey analysis also needs strata and PSU variables for variance estimation.</p>
+</div>
+</div>
+<div class="pa-tile">
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="pop-flag-longitudinal">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Example: longitudinal data red flag (HRS)</span>
+</button>
+<div class="pa-pop" id="pop-flag-longitudinal" hidden>
+<p>A user asks:</p>
+<blockquote>&ldquo;I am using HRS documentation to study change in functional limitations over time. Can I use a simple regression model?&rdquo;</blockquote>
+<div class="compare">
+<div class="col weak">
+<h3>Weaker response</h3>
+<blockquote>Says yes.</blockquote>
+<p class="small" style="margin:.6em 0 0;">Does not discuss repeated measures.</p>
+</div>
+<div class="col strong">
+<h3>Stronger response</h3>
+<blockquote>Asks about waves, timing, attrition, within-person correlation, time-varying variables, and whether the goal is describing change, estimating associations, or making predictions.</blockquote>
+</div>
+</div>
+<p style="margin:.8em 0 0;">HRS has a longitudinal cohort sample design, with members of the initial cohort interviewed every two years since 1992.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="pb-output-head">
+<h2 style="margin:0;">Useful follow-up prompts</h2>
+<button type="button" class="btn" data-copy-target="#followup-prompts-text">Copy</button>
+</div>
+<p class="small">After receiving an AI response, ask some of these before you act on it:</p>
+<div id="followup-prompts-text">
+<h3>Check what's missing</h3>
+<ul>
+<li>What assumptions are you making?</li>
+<li>What information is missing from my prompt?</li>
+</ul>
+<h3>Stress-test the recommendation</h3>
+<ul>
+<li>How would this recommendation change if my outcome is binary rather than continuous?</li>
+<li>How would this recommendation change if I am using survey weights?</li>
+<li>How would this recommendation change if I have repeated measures?</li>
+</ul>
+<h3>Verify before you proceed</h3>
+<ul style="margin-bottom:0;">
+<li>What could make this analysis plan inappropriate?</li>
+<li>What would a statistical reviewer question?</li>
+<li>What sensitivity analyses should I consider?</li>
+<li>What should I verify in the dataset documentation before proceeding?</li>
+</ul>
+</div>
+</div>
+
+<div class="card card-warn">
+<h2>Bottom line</h2>
+<p style="margin-bottom:0;">A useful AI response should help you think more clearly. It should not end the analytic decision-making process.</p>
+</div>
+
+</main>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div><strong style="color:#fff;">CHITA · School of Nursing</strong><br>1710 Red River Street, Austin, Texas 78712<br><a href="mailto:chita@utexas.edu">chita@utexas.edu</a></div>
+<div><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/reviewing-ai-outputs/">Source tutorial page (live UT Sites)</a></div>
+<div class="fine">Design prototype only. Not the production UT Sites deployment.</div>
+</div>
+</footer>
+<script src="assets/app.js"></script>
+<script src="assets/module5.js"></script>
+</body>
+</html>

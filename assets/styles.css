@@ -570,15 +570,45 @@ fieldset.pb-field { border: 0; margin: 0; padding: 0; }
 .pa-pop-ok strong { color: var(--success); }
 .pa-pop-no strong { color: #A3332B; }
 
-/* ---------- CHECK framework diagram (module 5 preview) ---------- */
+/* ---------- CHECK framework diagram (module 5) ---------- */
 .check-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .7em; }
 @media (max-width: 880px) { .check-grid { grid-template-columns: repeat(2, 1fr); } }
+/* The 5 .pa-toggle buttons are direct grid children (one per column, row 1).
+   The 5 .pa-pop panels are ALSO direct grid children, not nested inside a
+   per-column wrapper -- each explicitly spans the full row width, so an
+   expanded panel gets the entire row's width to work with instead of being
+   squeezed into 1/5 of it. Hidden panels (`hidden` attribute -> display:none)
+   don't occupy a grid row at all; only the currently-open one(s) do, stacking
+   in DOM order beneath the button row. No JS change needed -- this relies
+   only on standard grid item placement, not :has() or any newer selector. */
+.check-grid > .pa-pop { grid-column: 1 / -1; }
+/* Module 3's .pa-toggle right padding (1.1em) was sized for icon+title buttons,
+   where the icon pushes the title down a row before it reaches the indicator's
+   corner. Check-grid's buttons are title-only, sitting in the same vertical
+   band as the indicator, so long titles ("E — Evidence and standards") ran
+   under the "+" glyph. Reserve exactly the indicator's own footprint
+   (1.4em width + .8em right offset = 2.2em) so text always wraps clear of it. */
+.check-grid .pa-toggle { padding-right: 2.2em; }
+
+/* ---------- Red-flag scenario quiz (module 5) ---------- */
+.rf-quiz { margin-top: 1.6em; }
+.rf-quiz:first-of-type { margin-top: .4em; }
+.rf-quiz h3 { font-size: .95rem; margin-bottom: .3em; }
+.rf-feedback { font-weight: 700; margin: .6em 0 0; min-height: 1.2em; }
+
+.rf-table { width: 100%; border-collapse: collapse; margin-top: .3em; font-size: .9rem; }
+.rf-table th, .rf-table td { text-align: left; padding: .6em .8em; border-bottom: 1px solid var(--line); vertical-align: top; }
+.rf-table th { background: var(--ut-orange-tint); color: var(--ut-orange-dark); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+.rf-table tr:last-child td { border-bottom: none; }
 .check-letter {
   background: var(--paper-alt); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 1em .8em; text-align: center;
 }
 .check-letter .big { font-size: 1.6rem; font-weight: 800; color: var(--ut-orange); display: block; }
 .check-letter .label { font-size: .78rem; font-weight: 700; margin-top: .3em; display: block; }
+/* .check-letter is unused by module-05-reviewing-outputs.html (superseded by
+   the .pa-toggle/.pa-pop disclosure treatment above) -- left in place rather
+   than pruned, since removing CSS isn't this pass's call to make. */
 
 /* ---------- Module grid on home ---------- */
 .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1em; }
