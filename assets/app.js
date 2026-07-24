@@ -67,8 +67,41 @@ function initDisclosureToggles() {
   });
 }
 
+// Learning-path sidebar nav: collapsible on mobile, always open on desktop.
+// Separate from initDisclosureToggles() because this one needs a viewport-aware
+// default state (collapsed on a phone, expanded on desktop) -- the other
+// disclosure toggles on the site always start closed via the `hidden` attribute
+// already in the markup, no responsive default needed there.
+function initNavToggle() {
+  var toggle = document.querySelector('.path-nav-toggle');
+  if (!toggle) return;
+  var list = document.getElementById(toggle.getAttribute('aria-controls'));
+  if (!list) return;
+  var mq = window.matchMedia('(max-width: 880px)');
+
+  function applyDefaultForSize() {
+    var collapsed = mq.matches;
+    toggle.setAttribute('aria-expanded', String(!collapsed));
+    list.hidden = collapsed;
+  }
+
+  toggle.addEventListener('click', function () {
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    list.hidden = expanded;
+  });
+
+  // Reset to the per-breakpoint default when the viewport actually crosses
+  // the breakpoint (resize, rotation) -- doesn't fight a manual toggle within
+  // the same size class.
+  if (mq.addEventListener) mq.addEventListener('change', applyDefaultForSize);
+  else if (mq.addListener) mq.addListener(applyDefaultForSize);
+  applyDefaultForSize();
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initChecklists();
   initCopyButtons();
   initDisclosureToggles();
+  initNavToggle();
 });

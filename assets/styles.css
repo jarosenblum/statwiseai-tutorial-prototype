@@ -154,12 +154,36 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
   padding: 1.1em;
   box-shadow: var(--shadow);
 }
-.path-nav h2 {
-  font-size: .78rem;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  color: var(--ink-soft);
-  margin-bottom: .9em;
+.path-nav h2 { margin: 0; }
+/* Toggle button carries the heading's old visual styling (font-size, uppercase,
+   color) since the clickable element -- not a plain <h2> -- has to be the thing
+   a screen reader announces as expandable. Desktop keeps the list permanently
+   open (see the media query below), so the toggle looks and behaves like inert
+   text there; only below the .shell single-column breakpoint does it become a
+   real collapse control. This is what makes the nav mobile-friendly: on a phone
+   the 9-item list no longer occupies the full viewport before any page content
+   is reachable -- it starts collapsed to one line. */
+.path-nav-toggle {
+  display: flex; align-items: center; justify-content: space-between; gap: .5em;
+  width: 100%; background: none; border: 0; padding: 0; margin: 0 0 .9em;
+  font: inherit; text-align: left; cursor: default;
+  font-size: .78rem; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--ink-soft); font-weight: 700;
+}
+.path-nav-toggle-icon { display: none; font-size: 1rem; line-height: 1; transition: transform .2s ease; }
+.path-nav-toggle[aria-expanded="true"] .path-nav-toggle-icon { transform: rotate(180deg); }
+/* Placed after the base .path-nav/.path-nav-toggle-icon rules above (not
+   grouped into the earlier .shell breakpoint block) so these overrides win
+   the cascade at equal specificity -- source order, not just the media
+   condition, decides the winner here. Below this width the nav sits above
+   page content in normal flow (not beside it), so a sticky position would
+   make the whole 9-item list -- or even just the collapsed toggle bar --
+   float over content while scrolling. */
+@media (max-width: 880px) {
+  .path-nav { position: static; top: auto; }
+  .path-nav-toggle { cursor: pointer; }
+  .path-nav-toggle-icon { display: inline-block; }
+  .path-nav-toggle:hover { color: var(--ut-orange-dark); }
 }
 .path-nav ol { list-style: none; margin: 0; padding: 0; }
 .path-nav li {
@@ -617,6 +641,41 @@ fieldset.pb-field { border: 0; margin: 0; padding: 0; }
 .checklist-group { margin-top: 1.6em; }
 .checklist-group:first-of-type { margin-top: .4em; }
 .checklist-group h3 { margin-bottom: .4em; }
+
+/* ---------- Reproducibility checklist: 2-column layout (module 7) ---------- */
+/* Base .checklist/.data-checklist progress-bar behavior is unchanged (shared
+   app.js wiring); this modifier only changes the <ul>'s own layout to 2
+   columns, same reuse-over-reinvention approach as .checklist-group (module 6). */
+.checklist-2col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2em; }
+@media (max-width: 640px) { .checklist-2col { grid-template-columns: 1fr; } }
+.checklist-2col li { border-bottom: 1px solid var(--line); }
+/* Superscript cross-references point into the AI Use Log field legend below --
+   real <a href> to a legend id, not decorative, so it's keyboard/AT-navigable
+   like a footnote rather than a plain visual mark. */
+.checklist label sup, .pb-field label sup { margin-left: .3em; }
+.checklist sup a, .pb-field label sup a { color: var(--ut-orange-dark); text-decoration: none; font-weight: 700; }
+.checklist sup a:hover, .pb-field label sup a:hover { text-decoration: underline; }
+.ul-field-legend { list-style: none; margin: .8em 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4em .9em; font-size: .78rem; color: var(--ink-soft); }
+.ul-field-legend li { display: flex; gap: .3em; }
+.ul-field-legend sup { font-weight: 700; color: var(--ut-orange-dark); }
+
+/* ---------- Prompt-history + documentation-layers mini diagram (module 7) ---------- */
+/* Illustrative infographic built from existing card/typography primitives --
+   not a new widget type, same classification as .flow-mini (module 3). */
+.history-layers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin: 1em 0; }
+@media (max-width: 720px) { .history-layers { grid-template-columns: 1fr; } }
+.history-layers h3 { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin-bottom: .6em; }
+.history-strip { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5em; }
+.history-strip li {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8rem;
+  background: var(--paper-alt); border: 1px solid var(--line); border-left: 3px solid var(--ut-orange);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: .5em .7em; color: var(--ink-soft);
+}
+.layers-stack { display: flex; flex-direction: column; gap: .5em; }
+.layer-card {
+  background: var(--paper-alt); border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+  padding: .6em .9em; font-weight: 600; font-size: .85rem; text-align: center; color: var(--ink);
+}
 
 /* ---------- Module grid on home ---------- */
 .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1em; }

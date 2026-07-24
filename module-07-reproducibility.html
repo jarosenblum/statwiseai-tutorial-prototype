@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 7 · Reproducibility and Prompt History — StatWiseAI Tutorial (Prototype)</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="brand-strip">
+<span>Center for Healthcare Innovation and Technology Advancements | School of Nursing</span>
+<span>PROTOTYPE — not affiliated with live UT Sites deployment</span>
+</div>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-title" href="index.html">
+<span class="mark">SW</span>
+<span class="site-title-text">
+<strong>StatWiseAI Tutorial</strong>
+<span>AI Literacy Learning Path</span>
+</span>
+</a>
+<div class="header-actions">
+<span class="pill-badge">Module 7 of 9</span>
+</div>
+</div>
+</header>
+<div class="shell">
+<nav class="path-nav" aria-label="Tutorial module path">
+<h2><button type="button" class="path-nav-toggle" aria-expanded="true" aria-controls="path-nav-list"><span>Learning path</span><span class="path-nav-toggle-icon" aria-hidden="true">▾</span></button></h2>
+<ol id="path-nav-list">
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-01-responsible-use.html">1. Start Here: Responsible Use</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-02-ai-basics.html">2. AI Basics for Researchers</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-03-prompting.html">3. Prompting for Data Analysis</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-04-documentation.html">4. Working with Dataset Documentation</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-05-reviewing-outputs.html">5. Reviewing AI Outputs</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="done"><span class="step-dot" aria-hidden="true">✓</span><span class="step-body"><a class="step-label" href="module-06-requesting-code.html">6. Requesting Code</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="active"><span class="step-dot" aria-hidden="true">7</span><span class="step-body"><a class="step-label" href="module-07-reproducibility.html">7. Reproducibility &amp; Prompt History</a><span class="tag tag-built">Prototyped</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">8</span><span class="step-body"><span class="step-label">8. Practice: HRS &amp; NHANES</span><span class="tag tag-planned">Planned</span></span></li>
+<li class="locked"><span class="step-dot" aria-hidden="true">9</span><span class="step-body"><span class="step-label">9. Templates &amp; Checklists</span><span class="tag tag-planned">Planned</span></span></li>
+</ol>
+</nav>
+<main class="content" id="main" tabindex="-1">
+<div class="page-head">
+<span class="eyebrow">Module 7 of 9</span>
+<h1>Reproducibility and Prompt History</h1>
+<p class="lede">Reproducibility means someone else can understand what was done, why it was done, and how the final analytic decisions were made — AI-assisted analysis needs the same documentation care as any other analytic choice.</p>
+</div>
+
+<div class="card">
+<h2>Overview</h2>
+<p>Reproducibility means that others can understand what was done, why it was done, and how the final analytic decisions were made. AI-assisted analysis should be documented with the same care as data cleaning, model selection, code development, and interpretation.</p>
+<p>StatWiseAI automatically stores users&rsquo; prompt history and AI-generated outputs. These records support reproducibility, troubleshooting, quality review, and research evaluation. Access to stored prompt and output history is limited to the StatWiseAI research team.</p>
+<p style="margin-bottom:0;">Because prompt and output history is stored, users should avoid entering proprietary, sensitive, private, identifiable, HIPAA-regulated, FERPA-regulated, or otherwise restricted information.</p>
+</div>
+
+<div class="card">
+<h2>What should be documented?</h2>
+<p class="small">For important analytic decisions, users should document:</p>
+<ul style="margin-bottom:0;">
+<li>What question was asked.</li>
+<li>What information was provided to StatWiseAI.</li>
+<li>What StatWiseAI recommended.</li>
+<li>What decision the researcher made.</li>
+<li>Whether the recommendation was accepted, modified, or rejected.</li>
+<li>What verification steps were completed.</li>
+<li>Who reviewed the final decision.</li>
+<li>Where the code and output are stored.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>AI Use Log</h2>
+<p class="small">Users may use this template to document important AI-assisted research decisions.</p>
+<h3>Example: AI Use Log Entry (NHANES food insecurity)</h3>
+<p class="small">A completed entry, filled in for illustration. Fill in your own version in the blank form below.</p>
+<div class="pb-form">
+<div class="grid-2">
+<div class="pb-field">
+<label for="ex-project">Project name</label>
+<input type="text" id="ex-project" readonly value="NHANES food insecurity and depressive symptoms analysis">
+</div>
+<div class="pb-field">
+<label for="ex-dataset">Dataset or documentation source</label>
+<input type="text" id="ex-dataset" readonly value="Public NHANES documentation">
+</div>
+</div>
+
+<div class="pb-field">
+<label for="ex-question">Research question</label>
+<textarea id="ex-question" readonly>Is food insecurity associated with depressive symptoms among adults?</textarea>
+</div>
+
+<div class="grid-2">
+<div class="pb-field">
+<label for="ex-date">Date</label>
+<input type="text" id="ex-date" readonly value="June 8, 2026">
+</div>
+<div class="pb-field">
+<label for="ex-task">StatWiseAI task</label>
+<input type="text" id="ex-task" readonly value="Analysis planning">
+</div>
+</div>
+
+<div class="pb-field">
+<label for="ex-prompt">Prompt or prompt summary</label>
+<textarea id="ex-prompt" readonly>Asked for guidance on relevant documentation, survey design features, candidate variables, and common mistakes.</textarea>
+</div>
+
+<div class="pb-field">
+<label for="ex-recommendation">AI-generated recommendation</label>
+<textarea id="ex-recommendation" readonly>Review questionnaire documentation, demographic files, depression measure documentation, food security variables, survey weights, strata, PSUs, and cycle-combination rules.</textarea>
+</div>
+
+<div class="pb-field">
+<label for="ex-decision">Human decision</label>
+<textarea id="ex-decision" readonly>Proceed with a survey-weighted analysis plan after confirming variable eligibility and appropriate weights.</textarea>
+</div>
+
+<div class="pb-field">
+<label for="ex-rationale">Rationale for decision</label>
+<textarea id="ex-rationale" readonly>NHANES uses complex survey design features that must be incorporated for population-level inference.</textarea>
+</div>
+
+<div class="pb-field">
+<label for="ex-verification">Verification steps</label>
+<textarea id="ex-verification" readonly>Review official NHANES analytic guidelines and variable documentation; consult statistician if combining cycles.</textarea>
+</div>
+
+<div class="grid-2">
+<div class="pb-field">
+<label for="ex-software">Software/code used</label>
+<input type="text" id="ex-software" readonly value="R or Stata, depending on analyst preference.">
+</div>
+<div class="pb-field">
+<label for="ex-reviewer">Reviewer or collaborator consulted</label>
+<input type="text" id="ex-reviewer" readonly value="PI or Co-I.">
+</div>
+</div>
+
+<div class="pb-field">
+<label for="ex-concerns">Remaining concerns</label>
+<textarea id="ex-concerns" readonly>Missingness, eligibility restrictions, and whether depression items are available for selected cycles.</textarea>
+</div>
+
+<div class="pb-field">
+<label for="ex-location">Location of final code/output</label>
+<input type="text" id="ex-location" readonly value="Project repository or approved storage location.">
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Build your own AI Use Log entry</h2>
+<p class="small">Fill in what you know, then select Generate Entry. Anything left blank stays blank in the generated text so you can fill it in later.</p>
+<button type="button" class="pa-toggle" aria-expanded="false" aria-controls="ul-form-panel">
+<span class="pa-indicator" aria-hidden="true">+</span>
+<span class="pa-title">Fill in your own entry</span>
+</button>
+<div id="ul-form-panel" hidden>
+<p class="small" style="margin:0 0 .9em;">Superscript numbers cross-reference the matching item in the reproducibility checklist below.</p>
+<form id="ul-form" class="pb-form" onsubmit="return false;">
+<div class="grid-2">
+<div class="pb-field">
+<label for="ul-project">Project name</label>
+<input type="text" id="ul-project">
+</div>
+<div class="pb-field">
+<label for="ul-dataset">Dataset or documentation source<sup><a href="#m7-note-2">2</a></sup></label>
+<input type="text" id="ul-dataset" placeholder="e.g., Public NHANES documentation">
+</div>
+</div>
+
+<div class="pb-field">
+<label for="ul-question">Research question<sup><a href="#m7-note-1">1</a></sup></label>
+<textarea id="ul-question" placeholder="e.g., Is food insecurity associated with depressive symptoms among adults?"></textarea>
+</div>
+
+<div class="grid-2">
+<div class="pb-field">
+<label for="ul-date">Date</label>
+<input type="text" id="ul-date" placeholder="e.g., June 8, 2026">
+</div>
+<div class="pb-field">
+<label for="ul-task">StatWiseAI task<sup><a href="#m7-note-7">7</a></sup></label>
+<input type="text" id="ul-task" placeholder="e.g., Analysis planning">
+</div>
+</div>
+
+<div class="pb-field">
+<label for="ul-prompt">Prompt or prompt summary<sup><a href="#m7-note-8">8</a></sup></label>
+<textarea id="ul-prompt"></textarea>
+</div>
+
+<div class="pb-field">
+<label for="ul-recommendation">AI-generated recommendation<sup><a href="#m7-note-3">3</a></sup></label>
+<textarea id="ul-recommendation"></textarea>
+</div>
+
+<div class="pb-field">
+<label for="ul-decision">Human decision<sup><a href="#m7-note-9">9</a></sup></label>
+<textarea id="ul-decision"></textarea>
+</div>
+
+<div class="pb-field">
+<label for="ul-rationale">Rationale for decision</label>
+<textarea id="ul-rationale"></textarea>
+</div>
+
+<div class="pb-field">
+<label for="ul-verification">Verification steps<sup><a href="#m7-note-5">5</a></sup></label>
+<textarea id="ul-verification"></textarea>
+</div>
+
+<div class="grid-2">
+<div class="pb-field">
+<label for="ul-software">Software/code used<sup><a href="#m7-note-6">6</a></sup></label>
+<input type="text" id="ul-software">
+</div>
+<div class="pb-field">
+<label for="ul-reviewer">Reviewer or collaborator consulted<sup><a href="#m7-note-10">10</a></sup></label>
+<input type="text" id="ul-reviewer">
+</div>
+</div>
+
+<div class="pb-field">
+<label for="ul-concerns">Remaining concerns<sup><a href="#m7-note-4">4</a></sup></label>
+<textarea id="ul-concerns"></textarea>
+</div>
+
+<div class="pb-field">
+<label for="ul-location">Location of final code/output</label>
+<input type="text" id="ul-location">
+</div>
+
+<button type="button" class="btn" id="ul-generate" style="margin-top:.4em;">Generate Entry</button>
+</form>
+</div>
+</div>
+
+<div class="card">
+<div class="pb-output-head">
+<h2 style="margin:0;">Your AI Use Log entry</h2>
+<button type="button" class="btn" id="ul-copy">Copy</button>
+</div>
+<p class="sr-only" id="ul-copy-status" aria-live="polite"></p>
+<textarea id="ul-output-text" class="pb-output" style="width:100%;" readonly placeholder="Select Generate Entry above to assemble your log text."></textarea>
+<p class="small" style="margin-top:.8em;margin-bottom:0;">Save the generated text with your project notes — StatWiseAI does not store or submit this entry anywhere.</p>
+</div>
+
+<div class="card" data-checklist>
+<h2>Reproducibility checklist</h2>
+<p class="small">Before relying on AI-assisted work, users should confirm:</p>
+<ul class="checklist checklist-2col">
+<li><input type="checkbox" id="rc1"><label for="rc1">The research question is clearly stated.<sup><a href="#m7-note-1">1</a></sup></label></li>
+<li><input type="checkbox" id="rc2"><label for="rc2">Dataset documentation has been reviewed.<sup><a href="#m7-note-2">2</a></sup></label></li>
+<li><input type="checkbox" id="rc3"><label for="rc3">Variable definitions and coding decisions are documented.<sup><a href="#m7-note-3">3</a></sup></label></li>
+<li><input type="checkbox" id="rc4"><label for="rc4">Inclusion and exclusion criteria are recorded.<sup><a href="#m7-note-4">4</a></sup></label></li>
+<li><input type="checkbox" id="rc5"><label for="rc5">Missing data decisions are justified.<sup><a href="#m7-note-4">4</a></sup></label></li>
+<li><input type="checkbox" id="rc6"><label for="rc6">Survey weights, clustering, repeated measures, or longitudinal features are addressed when relevant.<sup><a href="#m7-note-3">3</a></sup></label></li>
+<li><input type="checkbox" id="rc7"><label for="rc7">AI-generated code has been reviewed and tested.<sup><a href="#m7-note-5">5</a>,<a href="#m7-note-6">6</a></sup></label></li>
+<li><input type="checkbox" id="rc8"><label for="rc8">Model assumptions are checked.<sup><a href="#m7-note-5">5</a></sup></label></li>
+<li><input type="checkbox" id="rc9"><label for="rc9">Sensitivity analyses are considered.</label></li>
+<li><input type="checkbox" id="rc10"><label for="rc10">Final interpretations are based on actual output.</label></li>
+<li><input type="checkbox" id="rc11"><label for="rc11">AI assistance is documented.<sup><a href="#m7-note-7">7</a>,<a href="#m7-note-8">8</a></sup></label></li>
+<li><input type="checkbox" id="rc12"><label for="rc12">A human researcher has reviewed the final analytic decision.<sup><a href="#m7-note-9">9</a>,<a href="#m7-note-10">10</a></sup></label></li>
+</ul>
+<div class="progress-track"><div class="progress-fill"></div></div>
+<div class="progress-label">0 of 12 confirmed (0%)</div>
+<p class="small" style="margin-top:1em;margin-bottom:.3em;">Superscript numbers point to the related AI Use Log field above. Not every item has a matching field.</p>
+<ul class="ul-field-legend">
+<li id="m7-note-1"><sup>1</sup> Research question</li>
+<li id="m7-note-2"><sup>2</sup> Dataset or documentation source</li>
+<li id="m7-note-3"><sup>3</sup> AI-generated recommendation</li>
+<li id="m7-note-4"><sup>4</sup> Remaining concerns</li>
+<li id="m7-note-5"><sup>5</sup> Verification steps</li>
+<li id="m7-note-6"><sup>6</sup> Software/code used</li>
+<li id="m7-note-7"><sup>7</sup> StatWiseAI task</li>
+<li id="m7-note-8"><sup>8</sup> Prompt or prompt summary</li>
+<li id="m7-note-9"><sup>9</sup> Human decision</li>
+<li id="m7-note-10"><sup>10</sup> Reviewer or collaborator consulted</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Prompt history is helpful, but not sufficient</h2>
+<p>Stored prompt history can help researchers reconstruct how an analysis plan developed. However, prompt history alone is not enough. Users should still maintain project documentation that includes code, output, analytic decisions, assumptions, and verification steps.</p>
+<p class="small" style="margin-bottom:.3em;">Illustrative example, not from the source text — one project's stored prompt history, alongside the other documentation it doesn't replace:</p>
+<div class="history-layers">
+<div>
+<h3>Stored prompt history (StatWiseAI)</h3>
+<ol class="history-strip">
+<li>Asked for guidance on relevant documentation, survey design features, candidate variables, and common mistakes.</li>
+<li>Requested draft R code for a survey-weighted logistic regression using placeholder variable names.</li>
+<li>Asked StatWiseAI to explain a diagnostic plot from the fitted model.</li>
+</ol>
+</div>
+<div>
+<h3>Project documentation (still needed)</h3>
+<div class="layers-stack">
+<div class="layer-card">Project notes</div>
+<div class="layer-card">Code repository</div>
+<div class="layer-card">Output/results</div>
+</div>
+</div>
+</div>
+<h3 style="margin-top:1.4em;">Recommended practice</h3>
+<p>When using StatWiseAI for a major analytic decision, users should save or summarize the final decision in their project notes. A good documentation note should answer:</p>
+<ul style="margin-bottom:0;">
+<li>What did StatWiseAI help with?</li>
+<li>What did the researcher decide?</li>
+<li>Why was that decision made?</li>
+<li>How was the decision checked?</li>
+</ul>
+</div>
+
+</main>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div><strong style="color:#fff;">CHITA · School of Nursing</strong><br>1710 Red River Street, Austin, Texas 78712<br><a href="mailto:chita@utexas.edu">chita@utexas.edu</a></div>
+<div><a href="https://sites.utexas.edu/chita/statwiseai-tutorial/reproducibility-and-prompt-history/">Source tutorial page (live UT Sites)</a></div>
+<div class="fine">Design prototype only. Not the production UT Sites deployment.</div>
+</div>
+</footer>
+<script src="assets/app.js"></script>
+<script src="assets/module7.js"></script>
+</body>
+</html>
